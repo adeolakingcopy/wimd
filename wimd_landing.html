@@ -1,0 +1,2452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women in Motion Design Summit — Your Career in Motion Design Starts Here</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --plum: #8B3F82;
+      --plum-dark: #6E3268;
+      --teal: #14795F;
+      --gold: #C98A2E;
+      --lime: #9CCB3B;
+      --blush: #F7E3E1;
+      --blush-soft: #FDF4F2;
+      --charcoal: #2B1E29;
+      --charcoal-soft: #3A2836;
+      --white: #FFFFFF;
+      --ink: #2B1E29;
+      --grad-blush-plum: linear-gradient(135deg, #F7E3E1 0%, #8B3F82 100%);
+      --grad-teal-plum: linear-gradient(135deg, #14795F 0%, #8B3F82 100%);
+      --grad-deep-plum: linear-gradient(135deg, #8B3F82 0%, #2B1E29 100%);
+      --grad-plum-gold: linear-gradient(135deg, #8B3F82 0%, #C98A2E 100%);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --shadow-soft: 0 20px 50px -20px rgba(43, 30, 41, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      scrollbar-color: var(--plum) rgba(139, 63, 130, 0.14);
+      scrollbar-width: thin;
+    }
+
+    ::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(139, 63, 130, 0.08);
+      border-radius: 999px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--plum) 0%, var(--gold) 100%);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      border-radius: 999px;
+      box-shadow: inset 0 0 0 1px rgba(43, 30, 41, 0.08);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--plum-dark) 0%, var(--gold) 100%);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    section {
+      position: relative;
+    }
+
+    /* ---------- Utility ---------- */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      background: var(--lime);
+      color: var(--charcoal);
+      margin-bottom: 22px;
+    }
+
+    .eyebrow.on-dark {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--blush);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .eyebrow.alt {
+      background: var(--blush);
+      color: var(--plum-dark);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--charcoal);
+    }
+
+    .on-dark h1,
+    .on-dark h2,
+    .on-dark h3,
+    .on-dark p,
+    .on-dark li,
+    .dark h1,
+    .dark h2,
+    .dark h3,
+    .dark p,
+    .dark li,
+    .rewards-section h1,
+    .rewards-section h2,
+    .rewards-section h3 {
+      color: var(--blush-soft);
+    }
+
+    .on-dark .muted,
+    .dark .muted,
+    .speakers-section .muted {
+      color: rgba(247, 227, 225, 0.72);
+    }
+
+    h1 {
+      font-size: clamp(38px, 5.4vw, 68px);
+      line-height: 1.05;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height: 1.12;
+    }
+
+    h3 {
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    p {
+      font-size: 16px;
+      color: #5A4A54;
+    }
+
+    .lede {
+      font-size: 19px;
+      color: #5A4A54;
+      max-width: 640px;
+    }
+
+    .center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--grad-plum-gold);
+      color: #fff;
+      box-shadow: 0 14px 28px -10px rgba(139, 63, 130, 0.55);
+    }
+
+    .btn-primary .icon-badge {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1.5px solid var(--charcoal);
+      color: var(--charcoal);
+    }
+
+    .btn-ghost.on-dark {
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #fff;
+    }
+
+    .btn-sm-round {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--plum);
+    }
+
+    .btn-primary .btn-sm-round {
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .icon-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #fff;
+    }
+
+    .icon-badge.round {
+      border-radius: 50%;
+    }
+
+    .icon-badge.sm {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+    border: 2px solid var(--ink);
+    padding: 5px 12px 5px 8px;
+   
+    transform: rotate(-1.5deg);
+    box-shadow: 3px 3px 0 var(--ink);
+    letter-spacing: .03em;
+    margin-bottom: 18px;
+    color: #fff;
+    }
+
+    .icon-badge.sm .icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .bg-teal {
+      background: var(--teal);
+    }
+
+    .bg-plum {
+      background: var(--plum);
+    }
+
+    .bg-gold {
+      background: var(--gold);
+    }
+
+    .bg-lime {
+      background: var(--lime);
+      color: var(--charcoal);
+    }
+
+    .bg-charcoal {
+      background: var(--charcoal);
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(253, 244, 242, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(43, 30, 41, 0.08);
+    }
+
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-wrap img {
+      height: 32px;
+      width: auto;
+    }
+
+    nav.links {
+      display: flex;
+      gap: 34px;
+      font-weight: 600;
+      font-size: 14.5px;
+    }
+
+    nav.links a {
+      opacity: .85;
+      transition: opacity .15s;
+    }
+
+    nav.links a:hover {
+      opacity: 1;
+      color: var(--plum);
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background:
+        radial-gradient(700px 420px at 88% -6%, rgba(139, 63, 130, 0.16), transparent 60%),
+        radial-gradient(600px 380px at 6% 8%, rgba(201, 138, 46, 0.14), transparent 55%),
+        var(--blush-soft);
+      padding: 76px 0 60px;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      text-align: center;
+      max-width: 880px;
+      margin: 0 auto;
+      opacity: 0;
+      transition: opacity .8s ease .2s;
+    }
+
+    .hero-inner.visible {
+      opacity: 1;
+    }
+
+    .hero-inner h1 {
+      margin-bottom: 20px;
+    }
+
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid currentColor;
+      width: 0;
+    }
+
+    .typewriter.typing {
+      animation:
+        typing var(--typewriter-duration, 2s) steps(var(--typewriter-chars, 20), end) forwards,
+        blink-caret .8s step-end infinite var(--typewriter-duration, 2s);
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: var(--typewriter-width, 0ch);
+      }
+    }
+
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .highlight-wrap {
+      position: relative;
+      display: inline-block;
+      padding: 0 6px;
+    }
+
+    .highlight-wrap .box {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 58%, rgba(156, 203, 59, 0.55) 58%);
+      padding: 0 4px;
+    }
+
+    .highlight-wrap::before,
+    .highlight-wrap::after {
+      content: '';
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--plum);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .highlight-wrap::before {
+      left: -14px;
+    }
+
+    .highlight-wrap::after {
+      right: -14px;
+    }
+
+    .hero .lede {
+      margin: 0 auto 34px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+      margin-bottom: 52px;
+    }
+
+    .scroll-link {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--plum-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 15px;
+      /* padding: 14px; */
+      border-radius: 34px;
+      
+      /* border: 3px solid var(--lime); */
+      box-shadow: var(--shadow-soft);
+      max-width: 1040px;
+      margin: 50px auto 0;
+    }
+
+    .photo-strip .photo-cell {
+      grid-column: 1 / -2;
+    }
+
+    .photo-cell {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+
+    .photo-cell img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .photo-cell .fill {
+      position: absolute;
+      inset: 0;
+    }
+
+    .photo-cell .caption {
+      position: relative;
+      z-index: 2;
+      padding: 16px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .photo-cell .glyph {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      opacity: .9;
+    }
+
+    .photo-cell .glyph svg {
+      width: 34%;
+      height: 34%;
+      stroke: rgba(255, 255, 255, 0.85);
+      fill: none;
+      stroke-width: 1.4;
+    }
+
+    .photo-cell::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.45) 100%);
+      z-index: 1;
+    }
+
+    .supported-by {
+        text-align: center;
+    font-size: 13px;
+    color: #786670;
+    margin-top: 64px;
+    }
+
+    .logo-row {
+         display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    }
+    
+
+    .logo-chip {
+         display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: #786670;
+    font-weight: 700;
+    font-size: 15px;
+    opacity: .7;
+    transition: opacity var(--dur-base);
+    }
+
+    /* ---------- Section base ---------- */
+    .section {
+      padding: 96px 0;
+    }
+
+    .section.tight {
+      padding: 72px 0;
+    }
+
+    .dark {
+      background: var(--charcoal);
+    }
+
+    /* ---------- Brand shape confetti ---------- */
+    .brand-shape {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      filter: drop-shadow(0 18px 30px rgba(43, 30, 41, 0.20));
+      animation: shape-float 8s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .brand-shape.slow {
+      animation-duration: 11s;
+    }
+
+    .brand-shape.spin {
+      animation-name: shape-float-spin;
+    }
+
+    @keyframes shape-float {
+      0%,
+      100% {
+        transform: translateY(0) rotate(var(--rot, 0deg));
+      }
+
+      50% {
+        transform: translateY(-16px) rotate(var(--rot, 0deg));
+      }
+    }
+
+    @keyframes shape-float-spin {
+      0% {
+        transform: translateY(0) rotate(var(--rot, 0deg));
+      }
+
+      50% {
+        transform: translateY(-14px) rotate(calc(var(--rot, 0deg) + 8deg));
+      }
+
+      100% {
+        transform: translateY(0) rotate(var(--rot, 0deg));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .brand-shape.hide-mobile {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brand-shape {
+        animation: none;
+      }
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .tag-chip {
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--blush-soft);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .facts-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: space-evenly;
+      gap: 14px;
+      background: var(--blush-soft);
+      border-radius: 20px;
+      padding: 15px;
+
+    }
+
+    .fact-card {
+      text-align: center;
+      background: #fff;
+      border-radius: 20px;
+      padding: 25px 24px;
+      box-shadow: 0 16px 34px -18px rgba(0, 0, 0, 0.35);
+    }
+
+    .fact-card .num {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--plum);
+    }
+
+    .fact-card .label {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #6b5a63;
+    }
+
+    .about-media {
+      position: relative;
+    }
+
+    .media-block {
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 4/3.1;
+      position: relative;
+      background: var(--grad-teal-plum);
+    }
+
+    .media-block .glyph {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .media-block .glyph svg {
+      width: 38%;
+      stroke: rgba(255, 255, 255, 0.9);
+      fill: none;
+      stroke-width: 1.3;
+    }
+
+    .media-with-facts {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .media-with-facts>* {
+      min-width: 0;
+      width: 100%;
+    }
+
+    /* ---------- Grid cards ---------- */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .grid-cards.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-cards.cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .simple-card {
+      background: var(--blush-soft);
+      border-radius: 20px;
+      padding: 26px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      border: 1px solid rgba(43, 30, 41, 0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .simple-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 30px -16px rgba(43, 30, 41, 0.25);
+    }
+
+    .simple-card h4 {
+      font-size: 15.5px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--charcoal);
+    }
+
+    .simple-card p {
+      font-size: 13.5px;
+      margin: 0;
+    }
+
+    .simple-card.on-dark {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .check-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid rgba(43, 30, 41, 0.07);
+    }
+
+    .check-item .icon-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+    }
+
+    .check-item .icon-badge .icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .check-item p {
+      font-size: 14.5px;
+      color: var(--charcoal);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    /* Week cards */
+    .week-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      margin-top: 48px;
+    }
+
+    .week-card {
+      background: #fff;
+      border-radius: 26px;
+      padding: 36px 32px;
+      box-shadow: 0 20px 40px -24px rgba(43, 30, 41, 0.25);
+      border: 1px solid rgba(43, 30, 41, 0.06);
+    }
+
+    .week-card .week-tag {
+background: var(--teal);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    /* color: var(--ink); */
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    /* background: var(--neutral-0); */
+    border: 2px solid var(--ink);
+    padding: 5px 12px 5px 8px;
+    border-radius: 20px;
+    transform: rotate(-1.5deg);
+    box-shadow: 3px 3px 0 var(--ink);
+      letter-spacing: .03em;
+      margin-bottom: 18px;
+      color: #fff;
+    }
+
+    .week-card.teal .week-tag {
+      background: var(--teal);
+    }
+
+    .week-card.plum .week-tag {
+      background: var(--plum);
+    }
+
+    .week-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .week-card p.desc {
+      margin-bottom: 20px;
+    }
+
+    .week-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .week-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14.5px;
+      color: #4a3c45;
+      font-weight: 500;
+    }
+
+    .week-list li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+      width: 15px;
+      height: 15px;
+      stroke: var(--teal);
+      fill: none;
+      stroke-width: 2.4;
+    }
+
+    .week-card.plum .week-list li svg {
+      stroke: var(--plum);
+    }
+
+    .challenge-box {
+      margin-top: 36px;
+      border-radius: 26px;
+      padding: 40px;
+      background: var(--grad-plum-gold);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .challenge-box .icon-badge {
+      background: rgba(255, 255, 255, 0.22);
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+
+    .challenge-box .icon-badge .icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .challenge-box h3 {
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .challenge-box p {
+      color: rgba(255, 255, 255, 0.92);
+      margin: 0;
+      max-width: 600px;
+    }
+
+    /* Rewards */
+    .rewards-section {
+      background: var(--grad-deep-plum);
+    }
+
+    .reward-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 20px;
+      padding: 26px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .reward-card h4 {
+      color: #fff;
+      font-size: 15.5px;
+    }
+
+    .rewards-note {
+      margin-top: 40px;
+      text-align: center;
+      font-weight: 700;
+      color: var(--lime);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Convener */
+    .convener-section .split {
+      align-items: center;
+    }
+
+    .convener-portrait {
+      border-radius: 28px;
+      aspect-ratio: 1/1.05;
+      position: relative;
+      overflow: hidden;
+      background: var(--grad-blush-plum);
+    }
+
+    .convener-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .convener-portrait .glyph {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .convener-portrait .glyph svg {
+      width: 42%;
+      stroke: rgba(255, 255, 255, 0.95);
+      fill: none;
+      stroke-width: 1.2;
+    }
+
+    .award-badge {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(6px);
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .award-badge .icon-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+    }
+
+    .award-badge .icon-badge .icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .award-badge strong {
+      font-size: 13.5px;
+      display: block;
+      color: var(--charcoal);
+    }
+
+    .award-badge span {
+      font-size: 12px;
+      color: #6b5a63;
+    }
+
+    .convener-copy .role-tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--blush);
+      color: var(--plum-dark);
+      font-weight: 700;
+      font-size: 12.5px;
+    }
+
+    .convener-copy p {
+      margin-bottom: 14px;
+    }
+
+    .convener-copy p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* Speakers teaser */
+    .speakers-section {
+      background:
+        radial-gradient(600px 400px at 15% 20%, rgba(156, 203, 59, 0.16), transparent 60%),
+        radial-gradient(700px 460px at 90% 80%, rgba(201, 138, 46, 0.18), transparent 60%),
+        var(--charcoal);
+      text-align: center;
+    }
+
+    .speakers-section .lede {
+      margin: 0 auto 30px;
+    }
+
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 12px 22px;
+      border-radius: 999px;
+      color: var(--blush-soft);
+      font-weight: 700;
+      font-size: 14.5px;
+      margin-bottom: 34px;
+    }
+
+    .date-pill .icon {
+      stroke: var(--lime);
+    }
+
+    .speaker-slots {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+    }
+
+    .speaker-slot {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px dashed rgba(255, 255, 255, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Narrative / mentorship block */
+    .narrative-section {
+      background: var(--blush-soft);
+    }
+
+    .narrative-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .narrative-inner p {
+      font-size: 19px;
+      color: #4a3c45;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .narrative-inner p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .quote-mark {
+      font-size: 64px;
+      font-weight: 900;
+      color: var(--lime);
+      line-height: 1;
+      margin-bottom: 6px;
+      font-family: Georgia, serif;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background:
+        radial-gradient(600px 400px at 15% 20%, rgba(156, 203, 59, 0.16), transparent 60%),
+        radial-gradient(700px 460px at 90% 80%, rgba(201, 138, 46, 0.18), transparent 60%),
+        var(--charcoal);
+      color: #fff;
+      text-align: center;
+      border-radius: 36px;
+      margin: 0 32px;
+      padding: 70px 40px;
+      max-width: 1136px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-cta h2 {
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .final-cta p {
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 34px;
+    }
+
+    .final-cta .hero-ctas {
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--charcoal);
+      padding: 64px 0 32px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-logo img {
+      height: 30px;
+      margin-bottom: 14px;
+    }
+
+    .footer-logo p {
+      color: rgba(247, 227, 225, 0.6);
+      font-size: 13.5px;
+      max-width: 280px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h5 {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      opacity: .7;
+    }
+
+    .footer-col a {
+      display: block;
+      color: rgba(247, 227, 225, 0.75);
+      font-size: 14.5px;
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 26px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      color: rgba(247, 227, 225, 0.5);
+      font-size: 13px;
+    }
+
+    @media (max-width:900px) {
+
+      .split,
+      .week-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-cards.cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .photo-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .photo-cell:first-child {
+        grid-column: 1/3;
+      }
+
+      nav.links {
+        display: none;
+      }
+
+      .media-with-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width:560px) {
+      .grid-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-cards.cols-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .final-cta {
+        margin: 0 16px;
+        padding: 50px 22px;
+      }
+      /* Make facts-stack three columns on mobile */
+      .facts-stack {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      /* Mobile layout: first image full-width landscape, rest in rows */
+      .photo-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        padding: 0 8px;
+        margin: 28px auto 0;
+        max-width: 100%;
+      }
+
+      .photo-strip .photo-cell:first-child {
+        grid-column: 1 / -1;
+        aspect-ratio: 16/9;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 10px 24px -12px rgba(43, 30, 41, 0.2);
+      }
+
+      .photo-strip .photo-cell {
+        aspect-ratio: 3/2;
+        border-radius: 14px;
+      }
+
+      .photo-strip .photo-cell img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ---------- Accessibility ---------- */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      background: var(--plum);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 0 0 12px 0;
+      font-weight: 700;
+      z-index: 200;
+    }
+
+    .skip-link:focus {
+      left: 0;
+      top: 0;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2.5px solid var(--plum);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .dark a:focus-visible,
+    .speakers-section a:focus-visible,
+    .rewards-section a:focus-visible {
+      outline-color: var(--lime);
+    }
+
+    /* ---------- Header scrolled state ---------- */
+    header {
+      transition: box-shadow .25s ease;
+    }
+
+    header.scrolled {
+      box-shadow: 0 8px 24px -12px rgba(43, 30, 41, 0.18);
+    }
+
+    /* ---------- Mobile nav ---------- */
+    .hamburger {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: transparent;
+      border: 1.5px solid rgba(43, 30, 41, 0.18);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .hamburger svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--charcoal);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    .hamburger .icon-close {
+      display: none;
+    }
+
+    .hamburger[aria-expanded="true"] .icon-menu {
+      display: none;
+    }
+
+    .hamburger[aria-expanded="true"] .icon-close {
+      display: block;
+    }
+
+    .mobile-panel {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      background: var(--blush-soft);
+      border-top: 1px solid rgba(43, 30, 41, 0.08);
+      padding: 10px 32px 22px;
+    }
+
+    .mobile-panel.open {
+      display: flex;
+    }
+
+    .mobile-panel a {
+      padding: 14px 6px;
+      font-weight: 700;
+      font-size: 15.5px;
+      border-bottom: 1px solid rgba(43, 30, 41, 0.07);
+    }
+
+    .mobile-panel .btn-primary {
+      margin-top: 14px;
+      justify-content: center;
+    }
+
+    /* ---------- Photo fills (real images) ---------- */
+    .photo-cell img,
+    .media-photo img,
+    .about-photo-fill {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-cell {
+      background: var(--blush);
+    }
+
+    .media-block {
+      background: var(--blush);
+    }
+
+    .media-block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ---------- Refined highlight motif ---------- */
+    .highlight-wrap {
+      position: relative;
+      display: inline-block;
+      padding: 0 4px;
+    }
+
+    .highlight-wrap .box {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 60%, rgba(156, 203, 59, 0.55) 60%);
+      padding: 0 2px;
+    }
+
+    .highlight-wrap::before,
+    .highlight-wrap::after {
+      content: '';
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--plum);
+      top: 8%;
+    }
+
+    .highlight-wrap::before {
+      left: -12px;
+    }
+
+    .highlight-wrap::after {
+      right: -12px;
+    }
+
+    /* ---------- Scroll reveal ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* ---------- Registration form ---------- */
+    .form-section {
+      background: var(--grad-blush-plum);
+      padding: 90px 0;
+    }
+
+    .form-card {
+      max-width: 620px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 30px;
+      padding: 44px 40px;
+      box-shadow: 0 30px 60px -25px rgba(43, 30, 41, 0.4);
+    }
+
+    .form-card .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .form-card h2 {
+      font-size: clamp(24px, 3vw, 32px);
+      margin-bottom: 10px;
+    }
+
+    .form-card>p {
+      margin-bottom: 30px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1/-1;
+    }
+
+    .field label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .field input,
+    .field select {
+      padding: 13px 16px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(43, 30, 41, 0.15);
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px;
+      color: var(--charcoal);
+      background: var(--blush-soft);
+    }
+
+    .field input:focus,
+    .field select:focus {
+      outline: none;
+      border-color: var(--plum);
+      background: #fff;
+    }
+
+    .track-choice {
+      display: flex;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .track-option {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(43, 30, 41, 0.15);
+      cursor: pointer;
+      font-size: 13.5px;
+      font-weight: 600;
+      background: var(--blush-soft);
+    }
+
+    .track-option input {
+      accent-color: var(--plum);
+      width: 16px;
+      height: 16px;
+    }
+
+    .track-option:has(input:checked) {
+      border-color: var(--plum);
+      background: rgba(139, 63, 130, 0.06);
+    }
+
+    .form-submit {
+      width: 100%;
+      justify-content: center;
+      margin-top: 8px;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form-note {
+      font-size: 12.5px;
+      color: #8a7a83;
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    .form-success .icon-badge {
+      margin: 0 auto 18px;
+      background: var(--teal);
+    }
+
+    .form-fields.hide {
+      display: none;
+    }
+       /* PAGE LOADER */
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #251925;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .5s ease, visibility .5s;
+    }
+
+    .page-loader.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-gif {
+      width: min(320px, 60vw);
+      height: auto;
+    }
+
+    body.loading {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body class="loading">
+
+  <div id="pageLoader" class="page-loader">
+   <img class="loader-gif" src="./WIMD LOGO ANIMATION 4k.gif" alt="Loading WIMD Summit">
+  </div>
+  <!-- ================= ICON SPRITE ================= -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="M4 12.5l5 5L20 6" />
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <path d="M7 5v14l12-7-12-7z" />
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <path
+          d="M7 20v-1.5a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4V20M9 10.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17.5 9a2.5 2.5 0 1 0 0-5" />
+      </symbol>
+      <symbol id="i-award" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="5" />
+        <path d="M8.5 12.5L7 21l5-2.5L17 21l-1.5-8.5" />
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+        <path d="M8 3v4M16 3v4M3.5 10h17" />
+      </symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24">
+        <rect x="3.5" y="9.5" width="17" height="11" rx="1.5" />
+        <path
+          d="M3.5 9.5h17v0M12 9.5V21M12 9.5c-1.6-4.5-6.5-4.5-7-1.7-.3 1.7 1 1.7 3.4 1.7M12 9.5c1.6-4.5 6.5-4.5 7-1.7.3 1.7-1 1.7-3.4 1.7" />
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L12 16.9 6.4 20l1.4-6.2-4.8-4.3 6.4-.6L12 3z" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <rect x="7" y="2.5" width="10" height="19" rx="2" />
+        <path d="M11 18.5h2" />
+      </symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="12" rx="1.5" />
+        <path d="M8 21h8M12 16v5" />
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="3" y="7.5" width="18" height="12" rx="2" />
+        <path d="M8.5 7.5V6a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v1.5M3 12.5h18" />
+      </symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24">
+        <path
+          d="M12 20.5s-7.5-4.6-9.6-9.4C1.1 7.6 3 4.7 6.2 4.4c2-.2 3.6.9 5.8 3.2 2.2-2.3 3.8-3.4 5.8-3.2 3.2.3 5.1 3.2 3.8 6.7-2.1 4.8-9.6 9.4-9.6 9.4z" />
+      </symbol>
+      <symbol id="i-message" viewBox="0 0 24 24">
+        <path d="M21 12a8 8 0 1 1-3.4-6.5" />
+        <path d="M21 3l-5 5" />
+      </symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24">
+        <path d="M8 4h8v6a4 4 0 0 1-8 0V4z" />
+        <path d="M8 5H5a2 2 0 0 0 2 4.5M16 5h3a2 2 0 0 1-2 4.5M9 20h6M12 14v6" />
+      </symbol>
+      <symbol id="i-network" viewBox="0 0 24 24">
+        <circle cx="6" cy="6" r="2.4" />
+        <circle cx="18" cy="6" r="2.4" />
+        <circle cx="12" cy="18" r="2.4" />
+        <path d="M8.1 7.2L10 15M15.9 7.2L14 15M8.4 6h7.2" />
+      </symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24">
+        <path d="M6 3.5h9l4 4V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1z" />
+        <path d="M14.5 3.5V8h4.5M8 12.5h8M8 16h8" />
+      </symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24">
+        <rect x="9" y="2.5" width="6" height="11" rx="3" />
+        <path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6" />
+      </symbol>
+      <symbol id="i-target" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5" />
+        <circle cx="12" cy="12" r="4.5" />
+        <circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none" />
+      </symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24">
+        <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z" />
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24">
+        <path d="M12 3l9 4.5-9 4.5-9-4.5L12 3z" />
+        <path d="M3 13l9 4.5 9-4.5M3 17.5L12 22l9-4.5" />
+      </symbol>
+      <symbol id="i-cash" viewBox="0 0 24 24">
+        <rect x="2.5" y="6.5" width="19" height="11" rx="2" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="M6 9v.01M18 15v.01" />
+      </symbol>
+      <symbol id="i-wifi" viewBox="0 0 24 24">
+        <path d="M4 9.5a12 12 0 0 1 16 0M7 13a7.5 7.5 0 0 1 10 0M10.2 16.5a3 3 0 0 1 3.6 0" />
+        <circle cx="12" cy="19.5" r="0.9" fill="currentColor" stroke="none" />
+      </symbol>
+      <symbol id="i-hand" viewBox="0 0 24 24">
+        <path
+          d="M8 13V5a1.5 1.5 0 0 1 3 0v6M11 11V4a1.5 1.5 0 0 1 3 0v7M14 11.5V6a1.5 1.5 0 0 1 3 0v9c0 3.3-2.2 6-6 6-2.4 0-3.7-.8-5.2-2.7L3 14.6c-.5-.7-.3-1.7.5-2.1.6-.3 1.3-.2 1.8.3L8 15.5" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- ================= HEADER ================= -->
+  <header id="site-header">
+    <div class="nav-row">
+      <div class="logo-wrap">
+        <img width="120" height="32"
+          src="./logo-black.png"
+          alt="Women in Motion Design logo">
+      </div>
+      <nav class="links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#learn">What You'll Learn</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#convener">Convener</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-primary" href="#register-form">
+          Register Now
+          <span class="btn-sm-round"><svg class="icon" style="width:14px;height:14px">
+              <use href="#i-arrow" />
+            </svg></span>
+        </a>
+        <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-panel"
+          aria-label="Open menu">
+          <svg class="icon-menu" viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <svg class="icon-close" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+      <a href="#about">About</a>
+      <a href="#learn">What You'll Learn</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#convener">Convener</a>
+      <a class="btn btn-primary" href="#register-form">
+        Register Now
+        <span class="btn-sm-round"><svg class="icon" style="width:14px;height:14px">
+            <use href="#i-arrow" />
+          </svg></span>
+      </a>
+    </nav>
+  </header>
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <img class="brand-shape hide-mobile" src="assets/shape-gold-clover.png" alt=""
+        style="top:-64px;left:-58px;width:190px;--rot:-10deg;opacity:.95;">
+      <img class="brand-shape slow hide-mobile" src="assets/shape-teal-triangle.png" alt=""
+        style="top:6px;right:-38px;width:130px;--rot:16deg;opacity:.9;animation-delay:.6s;">
+      <img class="brand-shape spin" src="assets/shape-purple-star.png" alt=""
+        style="bottom:26px;right:5%;width:76px;--rot:6deg;opacity:.9;animation-delay:1.2s;">
+      <div class="container hero-inner">
+        <span class="eyebrow"><svg class="icon" style="width:14px;height:14px;stroke:var(--charcoal)">
+            <use href="#i-spark" />
+          </svg>Free Virtual Summit</span>
+        <h1>Your Career in <br><span class="highlight-wrap"><span class="box typewriter" data-text="Motion Design"></span></span> Starts Here.</h1>
+        <p class="lede center">Join a free virtual summit designed to inspire, equip, and empower the next generation of
+          African women to build successful careers in motion design.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#register-form">
+            Register Now
+            <span class="btn-sm-round"><svg class="icon" style="width:14px;height:14px">
+                <use href="#i-arrow" />
+              </svg></span>
+          </a>
+          <a class="scroll-link" href="#about">
+            See what's inside
+            <svg class="icon" style="width:16px;height:16px;stroke:var(--plum-dark)">
+              <use href="#i-arrow" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- <div class="photo-strip">
+          <div class="photo-cell">
+            <img src="8e01a280-e1a6-4773-80e0-052417d87b23.png" alt="Women standing together outside" loading="eager">
+          </div>
+        </div> -->
+      </div>
+          <p class="supported-by">Tools you'll be trained on</p>
+    <div class="logo-row reveal in">
+      <span class="logo-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> After Effects</span>
+      <span class="logo-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> Alight Motion</span>
+      <span class="logo-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> CapCut</span>
+      <span class="logo-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> Premiere Rush</span>
+      <span class="logo-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> Canva</span>
+    </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section dark" id="about">
+      <img class="brand-shape slow hide-mobile" src="assets/shape-green-pinwheel.png" alt=""
+        style="bottom:-40px;left:-46px;width:150px;--rot:-8deg;opacity:.16;">
+      <div class="container ">
+        <div>
+          <span class="eyebrow on-dark"><svg class="icon" style="width:14px;height:14px">
+              <use href="#i-heart" />
+            </svg>About the Summit</span>
+          <h2>Empowering the next generation of African women to thrive in motion design.</h2>
+          <p class="muted" style="margin-top:20px;font-size:16.5px;">The Women in Motion Design Summit is a free virtual
+            event created to inspire, equip, and empower the next generation of African women to build successful
+            careers in motion design.</p>
+          <p class="muted" style="margin-top:16px;">Bringing together leading professionals, inspiring speakers, and
+            ambitious women from across the continent, the summit provides a unique opportunity to learn
+            industry-relevant skills, gain valuable career insights, and connect with a supportive community of
+            creatives.</p>
+          <p class="muted" style="margin-top:16px;">Whether you're a student, stay-at-home mum, entrepreneur,
+            freelancer, or someone looking to learn a valuable digital skill, this summit is designed to help you take
+            your first step into motion design.</p>
+          <p class="muted" style="margin-top:16px;">This is more than an event, it's the beginning of a movement to
+            raise a new generation of African women who will create, innovate, lead, and shape the future of motion
+            design.</p>
+        </div>
+     
+
+      </div>
+      <div class="photo-strip">
+          <div class="photo-cell">
+            <img src="8e01a280-e1a6-4773-80e0-052417d87b23.png" alt="Women standing together outside" loading="eager">
+          </div>
+          <div class="facts-stack">
+            <div class="fact-card">
+              <div class="num">14 Days</div>
+              <div class="label">Full summit program</div>
+            </div>
+            <div class="fact-card">
+              <div class="num">2 Weeks</div>
+              <div class="label">Live, hands-on training</div>
+            </div>
+            <div class="fact-card">
+              <div class="num">100% Free</div>
+              <div class="label">Virtual & open access</div>
+            </div>
+          </div>
+           
+        </div>
+          <div class="media-with-facts" style="position:relative;">
+          <img class="brand-shape hide-mobile" src="assets/shape-mauve-cluster.png" alt=""
+            style="top:-34px;right:10px;width:96px;--rot:14deg;opacity:.95;z-index:2;">
+        </div>
+    </section>
+
+    <!-- ================= WHO IS THIS FOR ================= -->
+    <section class="section tight">
+      <div class="container">
+        <span class="eyebrow alt"><svg class="icon" style="width:14px;height:14px;stroke:var(--plum-dark)">
+            <use href="#i-target" />
+          </svg>Who Is This For</span>
+        <h2 style="max-width:620px;">This summit is for you if you are —</h2>
+        <div class="grid-cards cols-3">
+          <div class="check-item"><span class="icon-badge bg-teal"><svg class="icon">
+                <use href="#i-check" />
+              </svg></span>
+            <p>A woman interested in building a career in motion design</p>
+          </div>
+          <div class="check-item"><span class="icon-badge bg-plum"><svg class="icon">
+                <use href="#i-check" />
+              </svg></span>
+            <p>A beginner with little or no design experience</p>
+          </div>
+          <div class="check-item"><span class="icon-badge bg-gold"><svg class="icon">
+                <use href="#i-check" />
+              </svg></span>
+            <p>Looking to learn a valuable digital skill</p>
+          </div>
+          <div class="check-item"><span class="icon-badge bg-teal"><svg class="icon">
+                <use href="#i-check" />
+              </svg></span>
+            <p>Interested in freelancing, remote work, or creative entrepreneurship</p>
+          </div>
+          <div class="check-item"><span class="icon-badge bg-plum"><svg class="icon">
+                <use href="#i-check" />
+              </svg></span>
+            <p>A business owner looking to elevate your brand through motion design</p>
+          </div>
+          <div class="check-item"><span class="icon-badge bg-gold"><svg class="icon">
+                <use href="#i-check" />
+              </svg></span>
+            <p>A smartphone user eager to begin your motion design journey</p>
+          </div>
+          <div class="check-item" style="grid-column:span 1;"><span class="icon-badge bg-teal"><svg class="icon">
+                <use href="#i-check" />
+              </svg></span>
+            <p>A PC user who wants to create professional motion graphics using After Effects</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHAT YOU'LL LEARN ================= -->
+    <section class="section" id="learn" style="background:var(--blush-soft);">
+      <div class="container">
+        <span class="eyebrow alt"><svg class="icon" style="width:14px;height:14px;stroke:var(--plum-dark)">
+            <use href="#i-layers" />
+          </svg>What You'll Learn</span>
+        <h2 style="max-width:700px;">Here's what we'll cover throughout the 14-day summit.</h2>
+        <p class="lede" style="margin-top:16px;">The Women in Motion Design Summit is designed to give you both the
+          mindset and the practical skills needed to build a successful career in motion design.</p>
+
+        <div class="week-cards">
+          <div class="week-card teal">
+            <span class="week-tag">WEEK 1</span>
+            <h3>Learn from Industry Leaders</h3>
+            <p class="desc">Gain valuable insights from four accomplished women who have built successful careers in
+              motion design. You'll learn how to:</p>
+            <ul class="week-list">
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Break into the motion design industry as a woman</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Build a successful and sustainable career</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Understand the business side and how to earn from your skills</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Build meaningful relationships through networking and collaboration</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Develop the mindset and habits of top-performing designers</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Create exceptional work that attracts brands and opportunities</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Navigate challenges and grow with confidence</li>
+            </ul>
+          </div>
+          <div class="week-card plum">
+            <span class="week-tag">WEEK 2</span>
+            <h3>Practical Motion Design Training</h3>
+            <p class="desc">Learn directly from experienced instructors through hands-on training  create professional
+              projects on a smartphone, and professional motion graphics using Adobe After Effects on a PC. You'll learn
+              how to:</p>
+            <ul class="week-list">
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Create engaging promotional videos</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Design compelling explainer videos</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Animate modern user interface (UI) designs</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Create storyboards and styleframes for animation projects</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Build a professional portfolio that attracts clients and employers</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Collaborate effectively with other creatives</li>
+              <li><svg>
+                  <use href="#i-check" />
+                </svg>Apply industry best practices to your creative workflow</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="challenge-box">
+          <span class="icon-badge"><svg class="icon">
+              <use href="#i-trophy" />
+            </svg></span>
+          <div>
+            <h3>Motion Design Challenge</h3>
+            <p>At the end of the training, participants will take part in a motion design challenge  giving them the
+              opportunity to apply everything they've learned, showcase their creativity, receive feedback, and compete
+              for exciting prizes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY ATTEND ================= -->
+    <section class="section tight">
+      <div class="container">
+        <span class="eyebrow alt"><svg class="icon" style="width:14px;height:14px;stroke:var(--plum-dark)">
+            <use href="#i-star" />
+          </svg>Why Attend?</span>
+        <h2 style="max-width:680px;">The summit gives you the opportunity to learn, grow, and build a successful career
+          in motion design.</h2>
+        <div class="grid-cards">
+          <div class="simple-card"><span class="icon-badge sm bg-teal"><svg class="icon">
+                <use href="#i-mic" />
+              </svg></span>
+            <h4>Learn from experienced industry professionals</h4>
+          </div>
+          <div class="simple-card"><span class="icon-badge sm bg-plum"><svg class="icon">
+                <use href="#i-monitor" />
+              </svg></span>
+            <h4>Gain practical, in-demand motion design skills</h4>
+          </div>
+          <div class="simple-card"><span class="icon-badge sm bg-gold"><svg class="icon">
+                <use href="#i-heart" />
+              </svg></span>
+            <h4>Build confidence to start your creative journey</h4>
+          </div>
+          <div class="simple-card"><span class="icon-badge sm bg-teal"><svg class="icon">
+                <use href="#i-network" />
+              </svg></span>
+            <h4>Connect with ambitious women and industry experts</h4>
+          </div>
+          <div class="simple-card"><span class="icon-badge sm bg-plum"><svg class="icon">
+                <use href="#i-users" />
+              </svg></span>
+            <h4>Grow your professional network</h4>
+          </div>
+          <div class="simple-card"><span class="icon-badge sm bg-gold"><svg class="icon">
+                <use href="#i-briefcase" />
+              </svg></span>
+            <h4>Discover career and freelance opportunities</h4>
+          </div>
+          <div class="simple-card"><span class="icon-badge sm bg-teal"><svg class="icon">
+                <use href="#i-layers" />
+              </svg></span>
+            <h4>Build a portfolio that stands out</h4>
+          </div>
+          <div class="simple-card"><span class="icon-badge sm bg-plum"><svg class="icon">
+                <use href="#i-trophy" />
+              </svg></span>
+            <h4>Join the Motion Design Challenge and win exciting prizes</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHAT YOU'LL RECEIVE ================= -->
+    <section class="section dark" style="overflow:hidden;">
+      <img class="brand-shape slow hide-mobile" src="assets/shape-cyan-bowtie.png" alt=""
+        style="top:-32px;right:-28px;width:130px;--rot:12deg;opacity:.5;">
+      <div class="container">
+        <span class="eyebrow on-dark"><svg class="icon" style="width:14px;height:14px">
+            <use href="#i-gift" />
+          </svg>What You'll Receive</span>
+        <h2 style="max-width:600px;">When you join the summit, you'll also enjoy </h2>
+        <div class="grid-cards" style="margin-top:44px;">
+          <div class="simple-card on-dark"><span class="icon-badge sm bg-lime"><svg class="icon">
+                <use href="#i-play" />
+              </svg></span>
+            <h4 style="color:#fff;">Live training sessions</h4>
+          </div>
+          <div class="simple-card on-dark"><span class="icon-badge sm bg-gold"><svg class="icon">
+                <use href="#i-mic" />
+              </svg></span>
+            <h4 style="color:#fff;">Access to industry speakers</h4>
+          </div>
+          <div class="simple-card on-dark"><span class="icon-badge sm bg-teal"><svg class="icon">
+                <use href="#i-doc" />
+              </svg></span>
+            <h4 style="color:#fff;">Practical assignments</h4>
+          </div>
+          <div class="simple-card on-dark"><span class="icon-badge sm bg-lime"><svg class="icon">
+                <use href="#i-network" />
+              </svg></span>
+            <h4 style="color:#fff;">Networking opportunities</h4>
+          </div>
+          <div class="simple-card on-dark"><span class="icon-badge sm bg-gold"><svg class="icon">
+                <use href="#i-award" />
+              </svg></span>
+            <h4 style="color:#fff;">Certificate of Participation</h4>
+          </div>
+          <div class="simple-card on-dark"><span class="icon-badge sm bg-teal"><svg class="icon">
+                <use href="#i-users" />
+              </svg></span>
+            <h4 style="color:#fff;">Community of aspiring women creatives</h4>
+          </div>
+          <div class="simple-card on-dark"><span class="icon-badge sm bg-lime"><svg class="icon">
+                <use href="#i-message" />
+              </svg></span>
+            <h4 style="color:#fff;">Question &amp; Answer sessions</h4>
+          </div>
+          <div class="simple-card on-dark"><span class="icon-badge sm bg-gold"><svg class="icon">
+                <use href="#i-star" />
+              </svg></span>
+            <h4 style="color:#fff;">Exclusive resources</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REWARDS & GIVEAWAYS ================= -->
+    <section class="section rewards-section" style="overflow:hidden;">
+      <img class="brand-shape hide-mobile" src="assets/shape-gold-clover.png" alt=""
+        style="top:-38px;right:-34px;width:150px;--rot:12deg;opacity:.92;">
+      <img class="brand-shape slow hide-mobile" src="assets/shape-cyan-bowtie.png" alt=""
+        style="bottom:-30px;left:-30px;width:120px;--rot:-14deg;opacity:.85;animation-delay:.5s;">
+      <div class="container">
+        <span class="eyebrow" style="background:var(--gold);color:#fff;"><svg class="icon"
+            style="width:14px;height:14px;stroke:#fff">
+            <use href="#i-gift" />
+          </svg>Exciting Rewards &amp; Giveaways</span>
+        <h2 style="color:#fff;max-width:560px;">Participants will stand a chance to win amazing prizes.</h2>
+        <div class="grid-cards cols-3" style="margin-top:44px;">
+          <div class="reward-card"><span class="icon-badge sm bg-lime"><svg class="icon">
+                <use href="#i-phone" />
+              </svg></span>
+            <h4>Brand New Smartphone</h4>
+          </div>
+          <div class="reward-card"><span class="icon-badge sm bg-gold"><svg class="icon">
+                <use href="#i-cash" />
+              </svg></span>
+            <h4>Cash Prizes</h4>
+          </div>
+          <div class="reward-card"><span class="icon-badge sm bg-teal"><svg class="icon">
+                <use href="#i-monitor" />
+              </svg></span>
+            <h4>Access to the Motion Design Essentials Course</h4>
+          </div>
+          <div class="reward-card"><span class="icon-badge sm bg-lime"><svg class="icon">
+                <use href="#i-star" />
+              </svg></span>
+            <h4>1-Year Alight Motion Premium Subscription</h4>
+          </div>
+          <div class="reward-card"><span class="icon-badge sm bg-gold"><svg class="icon">
+                <use href="#i-doc" />
+              </svg></span>
+            <h4>Exclusive Learning Resources</h4>
+          </div>
+          <div class="reward-card"><span class="icon-badge sm bg-teal"><svg class="icon">
+                <use href="#i-wifi" />
+              </svg></span>
+            <h4>Airtime Rewards for Joining Live Sessions</h4>
+          </div>
+        </div>
+        <p class="rewards-note"><svg class="icon" style="width:18px;height:18px;stroke:var(--lime)">
+            <use href="#i-spark" />
+          </svg>The more you show up, the better your chances.</p>
+      </div>
+    </section>
+
+    <!-- ================= CONVENER ================= -->
+    <section class="section convener-section" id="convener">
+      <div class="container split">
+        <div class="convener-portrait">
+       
+          <img src="https://femimaven.netlify.app/IMG_4387.webp"
+            alt="Femi Maven, convener of the Women in Motion Design Summit">
+          <div class="award-badge">
+            <span class="icon-badge bg-gold"><svg class="icon">
+                <use href="#i-award" />
+              </svg></span>
+            <div>
+              <strong>Africa Media Excellence Award</strong>
+              <span>Gen Z Awards</span>
+            </div>
+          </div>
+        </div>
+        <div class="convener-copy">
+          <span class="role-tag">Meet the Convener</span>
+          <h2>Femi Maven</h2>
+          <p class="lede" style="margin:14px 0 20px;">Award-winning motion graphics designer, creative educator, and
+            founder of Maven Mint Academy.</p>
+          <p>With years of experience in motion design, Femi has collaborated with startups, fintech companies, SaaS
+            brands, and businesses across various industries, delivering engaging visual experiences that help brands
+            communicate their stories effectively.</p>
+          <p>Passionate about developing the next generation of creative professionals, he has built one of Africa's
+            growing motion design communities through Maven Mint, empowering over 50,000 creatives through training
+            programs, workshops, and educational initiatives.</p>
+          <p>He is also a respected public speaker, committed to inspiring, mentoring, and equipping creatives with the
+            skills, mindset, and opportunities they need to build successful careers.</p>
+          <p>As the convener of the Women in Motion Design Summit, Femi's vision is to empower the next generation of
+            African women with the knowledge, confidence, and community to thrive in the motion design industry.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SPEAKERS ================= -->
+    <section class="section speakers-section" id="speakers" style="overflow:hidden;">
+      <img class="brand-shape spin hide-mobile" src="assets/shape-purple-star.png" alt=""
+        style="top:18px;left:4%;width:82px;--rot:-8deg;opacity:.9;">
+      <img class="brand-shape slow hide-mobile" src="assets/shape-olive-bowtie.png" alt=""
+        style="bottom:-26px;right:2%;width:110px;--rot:10deg;opacity:.5;animation-delay:.8s;">
+      <div class="container">
+        <span class="eyebrow on-dark center" style="display:inline-flex;"><svg class="icon"
+            style="width:14px;height:14px">
+            <use href="#i-mic" />
+          </svg>Speakers</span>
+        <h2 class="center" style="color:#fff;max-width:640px;">The Speakers Are a Surprise, for Now.</h2>
+        <p class="lede center muted" style="margin-top:18px;">We're not revealing the full lineup just yet. What we can
+          tell you is this: industry-leading motion designers and creative professionals will be joining us to teach and
+          share exactly how they built their own careers.</p>
+
+        <div class="speaker-slots" style="margin-top:44px;">
+          <div class="speaker-slot"><svg class="icon" style="width:26px;height:26px;stroke:rgba(255,255,255,0.5)">
+              <use href="#i-users" />
+            </svg></div>
+          <div class="speaker-slot"><svg class="icon" style="width:26px;height:26px;stroke:rgba(255,255,255,0.5)">
+              <use href="#i-users" />
+            </svg></div>
+          <div class="speaker-slot"><svg class="icon" style="width:26px;height:26px;stroke:rgba(255,255,255,0.5)">
+              <use href="#i-users" />
+            </svg></div>
+          <div class="speaker-slot"><svg class="icon" style="width:26px;height:26px;stroke:rgba(255,255,255,0.5)">
+              <use href="#i-users" />
+            </svg></div>
+        </div>
+
+        <div class="date-pill"><svg class="icon" style="width:17px;height:17px">
+            <use href="#i-calendar" />
+          </svg>We'll be announcing them as we get closer to September 14</div>
+        <div>
+          <a class="btn btn-primary" href="#">
+            Register now — don't miss it
+            <span class="btn-sm-round"><svg class="icon" style="width:14px;height:14px">
+                <use href="#i-arrow" />
+              </svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NARRATIVE / WHY IT'S DIFFERENT ================= -->
+    <section class="section narrative-section">
+      <div class="container narrative-inner">
+        <div class="quote-mark">“</div>
+        <p>Every session here is built to get you doing, not just watching. You'll be learning alongside women who
+          understand exactly where you're starting from  not people who already have it all figured out and forgot what
+          it felt like to begin.</p>
+        <p>You'll get real mentorship from someone who has actually taken people through this process and watched them
+          land clients, not theory pulled from a textbook. And you'll leave with something concrete: a skill, the start
+          of a portfolio, and a plan for what comes next.</p>
+        <p style="font-weight:700;color:var(--charcoal);">This is your chance to stop watching other people build
+          creative careers online  and actually start building yours.</p>
+      </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="section tight">
+      <div class="final-cta" style="overflow:hidden;">
+        <img class="brand-shape hide-mobile" src="assets/shape-green-pinwheel.png" alt=""
+          style="top:-30px;left:-26px;width:110px;--rot:-10deg;opacity:.9;">
+
+        <span class="eyebrow on-dark"><svg class="icon" style="width:14px;height:14px">
+            <use href="#i-spark" />
+          </svg>Free · Virtual · 14 Days</span>
+        <h2>Your Career in Motion Design Starts Here.</h2>
+        <p>Register now and take your first step into the Women in Motion Design Summit.</p>
+        <div class="hero-ctas">
+          <a class="btn" style="background:#fff;color:var(--plum);box-shadow:0 14px 28px -10px rgba(0,0,0,0.25);"
+            href="#">
+            Register Now
+            <span class="btn-sm-round" style="background:var(--blush);color:var(--plum)"><svg class="icon"
+                style="width:14px;height:14px">
+                <use href="#i-arrow" />
+              </svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <img
+              src="./logo.png"
+              alt="Women in Motion Design logo">
+            <p>A free virtual summit empowering the next generation of African women to build careers in motion design.
+              Convened by Femi Maven, founder of Maven Mint Academy.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <h5>Summit</h5>
+              <a href="#about">About</a>
+              <a href="#learn">What You'll Learn</a>
+              <a href="#speakers">Speakers</a>
+            </div>
+            <div class="footer-col">
+              <h5>More</h5>
+              <a href="#convener">Convener</a>
+              <a href="#register">Register</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Women in Motion Design Summit. All rights reserved.</p>
+          <p>Convened by Maven Mint Academy</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+          // Page loader
+    function revealHeroText() {
+      const heroInner = document.querySelector('.hero-inner');
+      const typeEl = document.querySelector('.typewriter');
+      if (heroInner) {
+        heroInner.classList.add('visible');
+      }
+      if (!typeEl) {
+        return;
+      }
+
+      const text = typeEl.dataset.text || typeEl.textContent.trim();
+      typeEl.textContent = text;
+      const chars = Math.max(10, text.length);
+      const duration = Math.max(1.8, chars * 0.06);
+      typeEl.style.setProperty('--typewriter-width', `${chars}ch`);
+      typeEl.style.setProperty('--typewriter-chars', `${chars}`);
+      typeEl.style.setProperty('--typewriter-duration', `${duration}s`);
+      typeEl.classList.add('typing');
+    }
+
+    function initPageReveals() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        revealHeroText();
+        return;
+      }
+
+      const reveals = document.querySelectorAll('.reveal, .reveal-group');
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in');
+          obs.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.16,
+      });
+
+      reveals.forEach(el => observer.observe(el));
+      revealHeroText();
+    }
+
+    (function () {
+      const loader = document.getElementById('pageLoader');
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const minDisplay = prefersReduced ? 0 : 4200;
+      const start = Date.now();
+
+      let loaderHidden = false;
+      function onLoaderHidden() {
+        document.body.classList.remove('loading');
+        initPageReveals();
+      }
+
+      function hideLoader() {
+        if (loaderHidden) return;
+        loaderHidden = true;
+
+        const elapsed = Date.now() - start;
+        const wait = Math.max(0, minDisplay - elapsed);
+        setTimeout(() => {
+          const finish = () => {
+            loader.removeEventListener('transitionend', finish);
+            onLoaderHidden();
+          };
+
+          loader.addEventListener('transitionend', finish, { once: true });
+          loader.classList.add('hide');
+          setTimeout(() => {
+            if (loaderHidden) {
+              onLoaderHidden();
+            }
+          }, 650);
+        }, wait);
+      }
+
+      if (document.readyState === 'complete') {
+        hideLoader();
+      } else {
+        window.addEventListener('load', hideLoader);
+      }
+      setTimeout(hideLoader, 9000);
+    })();
+    </script>
+
+</body>
+
+</html>
