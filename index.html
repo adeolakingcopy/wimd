@@ -40,6 +40,13 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
     }
 
     body {
@@ -261,14 +268,14 @@
       flex-shrink: 0;
       color: #fff;
 
-          border-radius: 12px;
-    border: 2px solid var(--ink);
-    padding: 5px 12px 5px 8px;
-    transform: rotate(-1.5deg);
-    box-shadow: 3px 3px 0 var(--ink);
-    letter-spacing: .03em;
-    margin-bottom: 18px;
-    color: #fff;
+      border-radius: 12px;
+      border: 2px solid var(--ink);
+      padding: 5px 12px 5px 8px;
+      transform: rotate(-1.5deg);
+      box-shadow: 3px 3px 0 var(--ink);
+      letter-spacing: .03em;
+      margin-bottom: 18px;
+      color: #fff;
     }
 
     .icon-badge.round {
@@ -1286,6 +1293,10 @@
         display: none;
       }
 
+      .header-cta .btn.btn-primary {
+        display: none;
+      }
+
       .media-with-facts {
         grid-template-columns: 1fr;
       }
@@ -1847,12 +1858,6 @@
       <a href="#learn">What You'll Learn</a>
       <a href="#speakers">Speakers</a>
       <a href="#convener">Convener</a>
-      <a class="btn btn-primary" href="#register-form">
-        Register Now
-        <span class="btn-sm-round"><svg class="icon" style="width:14px;height:14px">
-            <use href="#i-arrow" />
-          </svg></span>
-      </a>
     </nav>
   </header>
   <main id="main">
@@ -2413,7 +2418,8 @@
         <div class="footer-bottom">
           <p>© 2026 Women in Motion Design Summit. All rights reserved.</p>
           <p>Convened by Maven Mint Academy</p>
-          <a class="footer-credit" href="https://brandiecreative.netlify.app/" target="_blank" rel="noreferrer">Designed by Brandie Creative</a>
+          <a class="footer-credit" href="https://brandiecreative.netlify.app/" target="_blank" rel="noreferrer">Designed
+            by Brandie Creative</a>
         </div>
       </div>
     </footer>
@@ -2459,6 +2465,27 @@
         reveals.forEach(el => observer.observe(el));
         revealHeroText();
       }
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (event) {
+          const href = this.getAttribute('href');
+          if (!href || href === '#') return;
+
+          const target = document.querySelector(href);
+          if (!target) return;
+
+          event.preventDefault();
+
+          const header = document.getElementById('site-header');
+          const offset = header ? header.offsetHeight + 18 : 0;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top,
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+          });
+        });
+      });
 
       (function () {
         const loader = document.getElementById('pageLoader');
