@@ -1293,6 +1293,10 @@
         display: none;
       }
 
+      .hamburger {
+        display: flex;
+      }
+
       .header-cta .btn.btn-primary {
         display: none;
       }
@@ -1303,6 +1307,20 @@
 
       .footer-top {
         flex-direction: column;
+      }
+    }
+
+    @media (max-width:768px) {
+      nav.links {
+        display: none !important;
+      }
+
+      .hamburger {
+        display: flex !important;
+      }
+
+      .header-cta .btn.btn-primary {
+        display: none !important;
       }
     }
 
@@ -1455,22 +1473,62 @@
 
     .mobile-panel {
       display: none;
-      flex-direction: column;
-      gap: 2px;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100vh;
       background: var(--blush-soft);
-      border-top: 1px solid rgba(43, 30, 41, 0.08);
-      padding: 10px 32px 22px;
+      flex-direction: column;
+      gap: 0;
+      padding: 80px 0 40px;
+      overflow-y: auto;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 40;
+      box-shadow: -8px 0 32px rgba(43, 30, 41, 0.12);
+    }
+
+    .mobile-panel::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(43, 30, 41, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .mobile-panel.open::before {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .mobile-panel.open {
       display: flex;
+      opacity: 1;
+      transform: translateX(0);
     }
 
     .mobile-panel a {
-      padding: 14px 6px;
-      font-weight: 700;
-      font-size: 15.5px;
-      border-bottom: 1px solid rgba(43, 30, 41, 0.07);
+      padding: 16px 24px;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--charcoal);
+      opacity: 0.85;
+      transition: opacity 0.15s, background-color 0.15s;
+      border-bottom: 1px solid rgba(43, 30, 41, 0.06);
+      display: block;
+    }
+
+    .mobile-panel a:hover {
+      opacity: 1;
+      background-color: rgba(139, 63, 130, 0.08);
     }
 
     .mobile-panel .btn-primary {
@@ -1695,7 +1753,7 @@
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: #251925;
+      background: rgb(40 27 40);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1722,7 +1780,7 @@
 <body class="loading">
 
   <div id="pageLoader" class="page-loader">
-    <img class="loader-gif" src="./WIMD LOGO ANIMATION 4k.gif" alt="Loading WIMD Summit">
+    <img class="loader-gif" src="./WIMD animation.gif" alt="Loading WIMD Summit">
   </div>
   <!-- ================= ICON SPRITE ================= -->
   <svg width="0" height="0" style="position:absolute">
@@ -1837,7 +1895,7 @@
       </nav>
       <div class="header-cta">
         <a class="btn btn-primary" href="#register-form">
-          Register Now
+          Join the Waitlist Now
           <span class="btn-sm-round"><svg class="icon" style="width:14px;height:14px">
               <use href="#i-arrow" />
             </svg></span>
@@ -1880,7 +1938,7 @@
           African women to build successful careers in motion design.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#register-form">
-            Register Now
+            Join the Waitlist Now
             <span class="btn-sm-round"><svg class="icon" style="width:14px;height:14px">
                 <use href="#i-arrow" />
               </svg></span>
@@ -1916,16 +1974,7 @@
             <path d="M12 2 2 7l10 5 10-5-10-5Z"></path>
             <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
           </svg> CapCut</span>
-        <span class="logo-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2 2 7l10 5 10-5-10-5Z"></path>
-            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg> Premiere Rush</span>
-        <span class="logo-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2 2 7l10 5 10-5-10-5Z"></path>
-            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg> Canva</span>
+
       </div>
     </section>
 
@@ -2337,6 +2386,12 @@
           <div class="speaker-slot"><svg class="icon" style="width:26px;height:26px;stroke:rgba(255,255,255,0.5)">
               <use href="#i-users" />
             </svg></div>
+             <div class="speaker-slot"><svg class="icon" style="width:26px;height:26px;stroke:rgba(255,255,255,0.5)">
+              <use href="#i-users" />
+            </svg></div>
+             <div class="speaker-slot"><svg class="icon" style="width:26px;height:26px;stroke:rgba(255,255,255,0.5)">
+              <use href="#i-users" />
+            </svg></div>
         </div>
 
         <div class="date-pill"><svg class="icon" style="width:17px;height:17px">
@@ -2344,7 +2399,7 @@
           </svg>We'll be announcing them as we get closer to September 14</div>
         <div>
           <a class="btn btn-primary" href="#">
-            Register now — don't miss it
+            Join the Waitlist Now — don't miss it
             <span class="btn-sm-round"><svg class="icon" style="width:14px;height:14px">
                 <use href="#i-arrow" />
               </svg></span>
@@ -2378,11 +2433,11 @@
             <use href="#i-spark" />
           </svg>Free · Virtual · 14 Days</span>
         <h2>Your Career in Motion Design Starts Here.</h2>
-        <p>Register now and take your first step into the Women in Motion Design Summit.</p>
+        <p>Join the Waitlist Now and take your first step into the Women in Motion Design Summit.</p>
         <div class="hero-ctas">
           <a class="btn" style="background:#fff;color:var(--plum);box-shadow:0 14px 28px -10px rgba(0,0,0,0.25);"
             href="#">
-            Register Now
+            Join the Waitlist Now
             <span class="btn-sm-round" style="background:var(--blush);color:var(--plum)"><svg class="icon"
                 style="width:14px;height:14px">
                 <use href="#i-arrow" />
@@ -2424,6 +2479,44 @@
       </div>
     </footer>
     <script>
+      // Mobile menu toggle
+      (function () {
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobilePanel = document.getElementById('mobile-panel');
+
+        if (!hamburgerBtn || !mobilePanel) return;
+
+        function closeMenu() {
+          hamburgerBtn.setAttribute('aria-expanded', 'false');
+          mobilePanel.classList.remove('open');
+        }
+
+        hamburgerBtn.addEventListener('click', function () {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !isExpanded);
+          mobilePanel.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        mobilePanel.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu when clicking the backdrop
+        mobilePanel.addEventListener('click', function (e) {
+          if (e.target === mobilePanel) {
+            closeMenu();
+          }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && mobilePanel.classList.contains('open')) {
+            closeMenu();
+          }
+        });
+      })();
+
       // Page loader
       function revealHeroText() {
         const heroInner = document.querySelector('.hero-inner');
