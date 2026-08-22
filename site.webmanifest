@@ -1,0 +1,21 @@
+{
+  "name": "Women in Motion Design Summit",
+  "short_name": "WIMD Summit",
+  "description": "14-day virtual summit empowering the next generation of African women in motion design.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2B1E29",
+  "theme_color": "#8B3F82",
+  "icons": [
+    {
+      "src": "./logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
