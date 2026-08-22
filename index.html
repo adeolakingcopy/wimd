@@ -141,6 +141,13 @@
       padding: 0;
     }
 
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden !important;
+      position: relative;
+      width: 100%;
+    }
+
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 96px;
@@ -160,7 +167,16 @@
       -webkit-font-smoothing: antialiased;
       scrollbar-color: var(--plum) rgba(139, 63, 130, 0.14);
       scrollbar-width: thin;
-      overflow-x: hidden;
+    }
+
+    section, .section, .hero, .reel-section, main, header, footer, .container {
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    img, video, canvas, svg, wistia-player, iframe {
+      max-width: 100%;
+      height: auto;
     }
 
     ::-webkit-scrollbar {
@@ -2260,6 +2276,10 @@
       .footer-top {
         flex-direction: column;
       }
+
+      .brand-shape {
+        display: none !important;
+      }
     }
 
     @media (max-width: 560px) {
@@ -2978,7 +2998,7 @@ If they can do it, so can you. Your journey could be the next success story.</p>
 
         <div class="reveal center" style="margin-top:44px;text-align:center;">
           <a class="btn btn-primary" href="https://bit.ly/womeninmotiondesign" target="_blank" rel="noopener noreferrer">
-            Join the Waitlist Now — Don't Miss Out
+            Don't Miss Out — Join Now
             <span class="btn-sm-round"><svg class="icon" style="width:14px;height:14px"><use href="#i-arrow" /></svg></span>
           </a>
         </div>
@@ -3226,7 +3246,7 @@ If they can do it, so can you. Your journey could be the next success story.</p>
         
         <div class="reveal">
           <a class="btn btn-primary" href="https://bit.ly/womeninmotion2026" target="_blank" rel="noopener noreferrer">
-            Join the Waitlist Now — Don't Miss Out
+             Don't Miss Out — Join Now
             <span class="btn-sm-round"><svg class="icon" style="width:14px;height:14px">
                 <use href="#i-arrow" />
               </svg></span>
