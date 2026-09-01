@@ -5,11 +5,23 @@
   command = ""
 
 [[redirects]]
+  from = "https://womeninmotiondesign.netlify.app/*"
+  to = "https://womeninmotiondesign.com.ng/:splat"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Ensure AI crawlers can access the site
+# Block search engines from indexing Netlify preview
+[[headers]]
+  for = "/*"
+  conditions = [{host = "womeninmotiondesign.netlify.app"}]
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Ensure AI crawlers can access the site on primary domain
 [[headers]]
   for = "/*"
   [headers.values]
