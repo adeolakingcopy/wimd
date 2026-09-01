@@ -1,0 +1,17 @@
+# Netlify Configuration for Women in Motion Design Summit
+
+[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Ensure AI crawlers can access the site
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    Access-Control-Allow-Origin = "*"
