@@ -1,6 +1,29 @@
 # https://www.robotstxt.org/robotstxt.html
+# Allow all crawlers including AI crawlers
 User-agent: *
 Allow: /
 
+# Specific AI crawler rules
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Perplexity
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 # Sitemap
-Sitemap: https://womeninmotiondesign.com/sitemap.xml
+Sitemap: https://womeninmotiondesign.com.ng/sitemap.xml

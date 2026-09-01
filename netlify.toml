@@ -1,0 +1,29 @@
+# Netlify Configuration for Women in Motion Design Summit
+
+[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "https://womeninmotiondesign.netlify.app/*"
+  to = "https://womeninmotiondesign.com.ng/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Block search engines from indexing Netlify preview
+[[headers]]
+  for = "/*"
+  conditions = [{host = "womeninmotiondesign.netlify.app"}]
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Ensure AI crawlers can access the site on primary domain
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    Access-Control-Allow-Origin = "*"

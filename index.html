@@ -11,6 +11,7 @@
     content="Women in Motion Design, WIMD Summit, Motion Graphics Africa, After Effects, Alight Motion, CapCut, Creative Training Africa, Femi Maven, Maven Mint">
   <meta name="author" content="Femi Maven, Maven Mint">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#8B3F82">
   <meta name="google-site-verification" content="tjixmAqd-VfnlOUo1x0_TME9psH9KNulCvQO2zI7XaE" />
   <!-- Canonical & Manifest -->
@@ -95,7 +96,9 @@
         "url": "https://womeninmotiondesign.com.ng/",
         "logo": "https://womeninmotiondesign.com.ng/logo-black.png",
         "sameAs": [
-          "https://www.instagram.com/womeninmotiondesign/"
+          "https://www.instagram.com/womeninmotiondesign/",
+          "https://www.linkedin.com/company/womeninmotiondesign/",
+          "https://x.com/womeninmotionn"
         ]
       }
     ]
@@ -652,6 +655,7 @@
       white-space: nowrap;
       border-right: 2px solid currentColor;
       width: 0;
+      max-width: 100%;
     }
 
     .typewriter.typing {
@@ -680,6 +684,7 @@
       position: relative;
       display: inline-block;
       padding: 0 6px;
+      max-width: 100%;
     }
 
     .highlight-wrap .box {
@@ -687,6 +692,7 @@
       z-index: 1;
       background: linear-gradient(180deg, transparent 58%, rgba(156, 203, 59, 0.55) 58%);
       padding: 0 4px;
+      display: inline-block;
     }
 
     .highlight-wrap::before,
@@ -708,6 +714,37 @@
 
     .highlight-wrap::after {
       right: -12px;
+    }
+
+    /* Responsive fixes to prevent hero heading overflow on small viewports */
+    @media (max-width: 720px) {
+      .hero-inner h1 {
+        font-size: clamp(28px, 7.2vw, 40px);
+        line-height: 1.06;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+
+      .typewriter {
+        white-space: normal;
+        border-right: none;
+        width: auto !important;
+        display: inline-block;
+      }
+
+      .highlight-wrap::before,
+      .highlight-wrap::after {
+        left: -6px;
+        right: -6px;
+      }
+
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
 
     .hero .lede {
@@ -2040,6 +2077,7 @@
     .footer-social-links {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 12px;
       margin-top: 18px;
     }
@@ -2380,6 +2418,176 @@
     body.loading {
       overflow: hidden;
     }
+
+    /* ------------------ Global Responsive Utilities ------------------ */
+    /* Makes type, spacing and interactive targets scale smoothly across viewports */
+    :root {
+      /* fallback base for rem calculations */
+      font-size: 16px;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Fluid base font size (clamped) */
+    body {
+      font-size: clamp(14px, 1.2vw + 0.6rem, 18px);
+    }
+
+    /* Headings scale fluidly but remain readable */
+    h1 {
+      font-size: clamp(28px, 6.4vw, 56px);
+      line-height: 1.06;
+      margin: .3em 0;
+    }
+
+    h2 {
+      font-size: clamp(20px, 4.2vw, 36px);
+      line-height: 1.12;
+    }
+
+    h3 {
+      font-size: clamp(18px, 3.4vw, 24px);
+      line-height: 1.2;
+    }
+
+    p,
+    a,
+    li,
+    .lede {
+      font-size: clamp(14px, 2.2vw, 16px);
+    }
+
+    /* Containers & spacing */
+    .container {
+      padding-left: clamp(16px, 3vw, 32px);
+      padding-right: clamp(16px, 3vw, 32px);
+    }
+
+    /* Prevent elements from shrinking too small on narrow screens */
+    .logo-wrap img {
+      height: clamp(28px, 4.5vw, 40px);
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .header-cta .btn {
+      flex-shrink: 0;
+      min-width: 110px;
+    }
+
+    nav.links a {
+      white-space: nowrap;
+    }
+
+    /* Buttons and touch targets */
+    .btn {
+      font-size: clamp(14px, 2vw, 16px);
+      padding: clamp(8px, 1.4vw, 12px) clamp(12px, 2.2vw, 20px);
+    }
+
+    .btn .btn-sm-round {
+      width: clamp(28px, 4.2vw, 36px);
+      height: clamp(28px, 4.2vw, 36px);
+    }
+
+    /* Social & icon sizing */
+    .social-btn-icon,
+    .footer-social-btn {
+      width: clamp(36px, 6.5vw, 44px);
+      height: clamp(36px, 6.5vw, 44px);
+    }
+
+    .footer-social-btn {
+      padding: clamp(8px, 1.6vw, 10px) clamp(10px, 2vw, 16px);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Ensure SVG icons scale with their containers */
+    .icon {
+      width: 1.25em;
+      height: 1.25em;
+    }
+
+    /* Grid & cards: prevent content from collapsing */
+    .grid-cards>* {
+      min-width: 180px;
+    }
+
+    /* Make hero and major sections more robust on narrow screens */
+    .hero-inner {
+      padding-top: clamp(18px, 4vh, 40px);
+      padding-bottom: clamp(18px, 4vh, 40px);
+    }
+
+    .hero-inner h1 {
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* Improve tap targets and spacing on very small screens */
+    @media (max-width: 560px) {
+      nav.links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 18px;
+        padding-bottom: 28px;
+      }
+
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .header-cta .btn {
+        width: auto;
+      }
+
+      .grid-cards {
+        gap: 12px;
+      }
+
+      .grid-cards>* {
+        min-width: 100%;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .footer-social-links {
+        gap: 10px;
+      }
+
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    /* Small tweaks for medium screens */
+    @media (max-width: 900px) {
+      h1 {
+        font-size: clamp(30px, 7vw, 44px);
+      }
+
+      .logo-wrap img {
+        height: clamp(26px, 3.6vw, 36px);
+      }
+    }
+
+    /* ------------------ End Global Responsive Utilities ------------------ */
   </style>
   <!-- Resource Preloads & Speed Optimization -->
   <link rel="preload" as="image" href="./logo-black.png" fetchpriority="high">
@@ -3449,7 +3657,21 @@
                 <svg class="icon" style="width:16px;height:16px">
                   <use href="#i-instagram" />
                 </svg>
-                @womeninmotiondesign
+               
+              </a>
+              <a class="footer-social-btn" href="https://www.linkedin.com/company/womeninmotiondesign/" target="_blank"
+                rel="noopener noreferrer">
+                <svg class="icon" style="width:16px;height:16px">
+                  <use href="#i-linkedin" />
+                </svg>
+               
+              </a>
+              <a class="footer-social-btn" href="https://x.com/womeninmotionn" target="_blank"
+                rel="noopener noreferrer">
+                <svg class="icon" style="width:16px;height:16px">
+                  <use href="#i-x" />
+                </svg>
+                
               </a>
               <a class="footer-social-btn" href="https://www.linkedin.com/company/womeninmotiondesign/" target="_blank"
                 rel="noopener noreferrer">
