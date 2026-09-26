@@ -871,10 +871,38 @@
       box-shadow: 0 4px 10px rgba(139, 63, 130, 0.3);
     }
 
+    .countdown-live-status {
+      display: none;
+      font-size: clamp(20px, 3.2vw, 30px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--plum-dark);
+      text-align: center;
+      padding: 18px 12px 10px;
+      text-transform: uppercase;
+    }
+
+    .countdown-card-3d.is-live .countdown-live-status {
+      display: block;
+    }
+
+    .countdown-card-3d.is-live .countdown-grid {
+      filter: blur(2.5px);
+      opacity: 0.45;
+      transform: scale(0.98);
+    }
+
+    .countdown-card-3d.is-live .countdown-badge-note {
+      background: var(--lime);
+      color: var(--charcoal);
+      box-shadow: 0 4px 10px rgba(132, 206, 160, 0.3);
+    }
+
     .countdown-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
+      transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
     }
 
     .countdown-tile {
@@ -2832,6 +2860,8 @@
               </div>
             </div>
 
+            <div class="countdown-live-status" id="cd-status" aria-live="polite">Going Live Soon</div>
+
             <!-- <div class="countdown-footer">
               <span class="countdown-spots">
                 <svg class="icon" style="width:16px;height:16px;stroke:var(--teal)">
@@ -3862,39 +3892,43 @@
       const hoursEl = document.getElementById('cd-hours');
       const minsEl = document.getElementById('cd-mins');
       const secsEl = document.getElementById('cd-secs');
+      const statusEl = document.getElementById('cd-status');
+      const cardEl = document.getElementById('waitlistCountdown');
 
       if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
 
-      // Dynamically calculate target date for the upcoming September 25th 23:59:59 (WAT / GMT+1)
-      function getTargetDate() {
-        const now = new Date();
-        const currentYear = now.getFullYear();
-        // Month index 8 = September; Date = 25; Time = 23:59:59
-        let target = new Date(currentYear, 8, 25, 23, 59, 59);
-
-        // If September 25 has already passed in the current year, target next year's September 25
-        if (now.getTime() > target.getTime()) {
-          target = new Date(currentYear + 1, 8, 25, 23, 59, 59);
-        }
-        return target.getTime();
-      }
-
-      const targetDate = getTargetDate();
+      const targetDate = new Date(new Date().getFullYear(), 8, 25, 23, 59, 59).getTime();
       let prevValues = { days: '', hours: '', mins: '', secs: '' };
 
       function updateNumber(el, newVal, key) {
         if (prevValues[key] !== newVal) {
           el.textContent = newVal;
           el.classList.remove('pulse');
-          void el.offsetWidth; // Trigger reflow for CSS animation
+          void el.offsetWidth;
           el.classList.add('pulse');
           prevValues[key] = newVal;
         }
       }
 
+      function setExpiredState() {
+        if (cardEl) cardEl.classList.add('is-live');
+        if (statusEl) statusEl.textContent = 'Going Live Soon';
+        updateNumber(daysEl, '00', 'days');
+        updateNumber(hoursEl, '00', 'hours');
+        updateNumber(minsEl, '00', 'mins');
+        updateNumber(secsEl, '00', 'secs');
+      }
+
       function updateCountdown() {
         const now = Date.now();
         const diff = Math.max(0, targetDate - now);
+
+        if (diff === 0) {
+          setExpiredState();
+          return;
+        }
+
+        if (cardEl) cardEl.classList.remove('is-live');
 
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
