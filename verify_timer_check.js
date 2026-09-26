@@ -1,12 +1,12 @@
 function getTargetDate(dateStr) {
-  const now = new Date(dateStr);
-  return new Date(now.getFullYear(), 8, 25, 23, 59, 59).getTime();
+    const now = new Date(dateStr);
+    return new Date(now.getFullYear(), 8, 25, 23, 59, 59).getTime();
 }
 
 function isLiveSoon(dateStr) {
-  const now = new Date(dateStr).getTime();
-  const targetDate = getTargetDate(dateStr);
-  return Math.max(0, targetDate - now) === 0;
+    const now = new Date(dateStr).getTime();
+    const targetDate = getTargetDate(dateStr);
+    return Math.max(0, targetDate - now) === 0;
 }
 
 console.log('expired-on-sept-26:', isLiveSoon('2026-09-26T00:00:00Z'));
