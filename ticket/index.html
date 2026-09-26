@@ -1,356 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coming Soon | Women in Motion Design</title>
-    <meta
-      name="description"
-      content="Women in Motion Design is coming soon. Stay tuned for the next chapter of creative growth and opportunity."
-    />
+    <meta name="description"
+        content="Women in Motion Design is coming soon. Stay tuned for the next chapter of creative growth and opportunity." />
     <style>
-      :root {
-        --plum: #8b3f82;
-        --plum-dark: #6e3268;
-        --teal: #14795f;
-        --gold: #c98a2e;
-        --lime: #9ccb3b;
-        --blush: #f7e3e1;
-        --blush-soft: #fdf4f2;
-        --charcoal: #2b1e29;
-        --white: #ffffff;
-      }
-
-      * { box-sizing: border-box; }
-
-      html, body {
-        margin: 0;
-        min-height: 100%;
-        font-family: Inter, "Segoe UI", sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(139, 63, 130, 0.18), transparent 30%),
-          radial-gradient(circle at bottom right, rgba(156, 203, 59, 0.16), transparent 25%),
-          linear-gradient(135deg, #fffaf9 0%, #fdf4f2 100%);
-        color: var(--charcoal);
-      }
-
-      body {
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        padding: 32px 20px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(14px);
-        opacity: 0.55;
-        animation: floatOrb 12s ease-in-out infinite alternate;
-        z-index: 0;
-      }
-
-      .orb-one {
-        width: 220px;
-        height: 220px;
-        background: rgba(139, 63, 130, 0.18);
-        top: 8%;
-        left: 10%;
-      }
-
-      .orb-two {
-        width: 260px;
-        height: 260px;
-        background: rgba(156, 203, 59, 0.14);
-        right: 9%;
-        bottom: 10%;
-        animation-delay: 1.4s;
-      }
-
-      .card {
-        width: min(760px, 100%);
-        background: rgba(255, 255, 255, 0.78);
-        border: 1px solid rgba(139, 63, 130, 0.12);
-        border-radius: 30px;
-        box-shadow: 0 30px 60px -24px rgba(43, 30, 41, 0.25);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        padding: 42px 28px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(24px) scale(0.98);
-        animation: cardReveal 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards 0.8s;
-        z-index: 1;
-      }
-
-      .card::before,
-      .card::after {
-        content: "";
-        position: absolute;
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        filter: blur(50px);
-        opacity: 0.4;
-        z-index: 0;
-      }
-
-      .card::before {
-        background: rgba(139, 63, 130, 0.18);
-        top: -90px;
-        left: -60px;
-      }
-
-      .card::after {
-        background: rgba(156, 203, 59, 0.18);
-        bottom: -100px;
-        right: -40px;
-      }
-
-      .content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .tag {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        background: rgba(139, 63, 130, 0.08);
-        color: var(--plum-dark);
-        border: 1px solid rgba(139, 63, 130, 0.15);
-        border-radius: 999px;
-        padding: 10px 18px;
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        margin-bottom: 18px;
-        animation: pulseTag 2.2s ease-in-out infinite;
-      }
-
-      .dot {
-        width: 10px;
-        height: 10px;
-        background: var(--gold);
-        border-radius: 50%;
-        box-shadow: 0 0 0 6px rgba(201, 138, 46, 0.15);
-      }
-
-      h1 {
-        margin: 0;
-        font-size: clamp(2.2rem, 6vw, 4.8rem);
-        line-height: 0.98;
-        letter-spacing: -0.06em;
-        color: var(--charcoal);
-        animation: textFloat 1.8s ease-out both;
-      }
-
-      .highlight {
-        display: inline-block;
-        background: linear-gradient(180deg, transparent 58%, rgba(156, 203, 59, 0.5) 58%);
-        padding: 0 0.2em;
-      }
-
-      p {
-        margin: 22px auto 0;
-        max-width: 620px;
-        font-size: 1.08rem;
-        line-height: 1.7;
-        color: rgba(43, 30, 41, 0.8);
-        animation: fadeInUp 1s ease-out 0.9s both;
-      }
-
-      .btn-row {
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 16px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 15px 24px;
-        border-radius: 999px;
-        font-weight: 700;
-        text-decoration: none;
-        transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn:hover {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 18px 32px -18px rgba(43, 30, 41, 0.45);
-      }
-
-      .btn:active {
-        transform: translateY(0) scale(0.99);
-      }
-
-      .btn-primary {
-        background: linear-gradient(135deg, var(--plum) 0%, var(--gold) 100%);
-        color: var(--white);
-        box-shadow: 0 18px 28px -16px rgba(139, 63, 130, 0.7);
-      }
-
-      .btn-secondary {
-        background: rgba(139, 63, 130, 0.08);
-        color: var(--plum-dark);
-        border: 1px solid rgba(139, 63, 130, 0.15);
-      }
-
-      .brand-logo {
-        width: min(180px, 52vw);
-        height: auto;
-        display: block;
-        margin: 0 auto 18px;
-        filter: drop-shadow(0 12px 24px rgba(139, 63, 130, 0.16));
-        animation: floatBadge 4s ease-in-out infinite;
-      }
-
-      .page-loader {
-        position: fixed;
-        inset: 0;
-        z-index: 9999;
-        background: rgb(40 27 40);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity .5s ease, visibility .5s;
-      }
-
-      .page-loader.hide {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-
-      .loader-gif {
-        width: min(320px, 60vw);
-        height: auto;
-        display: block;
-      }
-
-      body.loading {
-        overflow: hidden;
-      }
-
-      @keyframes cardReveal {
-        0% {
-          opacity: 0;
-          transform: translateY(24px) scale(0.98);
+        :root {
+            --plum: #8b3f82;
+            --plum-dark: #6e3268;
+            --teal: #14795f;
+            --gold: #c98a2e;
+            --lime: #9ccb3b;
+            --blush: #f7e3e1;
+            --blush-soft: #fdf4f2;
+            --charcoal: #2b1e29;
+            --white: #ffffff;
         }
-        100% {
-          opacity: 1;
-          transform: translateY(0) scale(1);
+
+        * {
+            box-sizing: border-box;
         }
-      }
 
-      @keyframes pulseTag {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.04); }
-      }
-
-      @keyframes textFloat {
-        0% {
-          opacity: 0;
-          transform: translateY(10px);
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+            font-family: Inter, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(139, 63, 130, 0.18), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(156, 203, 59, 0.16), transparent 25%),
+                linear-gradient(135deg, #fffaf9 0%, #fdf4f2 100%);
+            color: var(--charcoal);
         }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
+
+        body {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            padding: 32px 20px;
+            position: relative;
+            overflow: hidden;
         }
-      }
 
-      @keyframes fadeInUp {
-        0% {
-          opacity: 0;
-          transform: translateY(12px);
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(14px);
+            opacity: 0.55;
+            animation: floatOrb 12s ease-in-out infinite alternate;
+            z-index: 0;
         }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
+
+        .orb-one {
+            width: 220px;
+            height: 220px;
+            background: rgba(139, 63, 130, 0.18);
+            top: 8%;
+            left: 10%;
         }
-      }
 
-      @keyframes floatOrb {
-        0% { transform: translate3d(0, 0, 0) scale(1); }
-        100% { transform: translate3d(22px, -18px, 0) scale(1.15); }
-      }
+        .orb-two {
+            width: 260px;
+            height: 260px;
+            background: rgba(156, 203, 59, 0.14);
+            right: 9%;
+            bottom: 10%;
+            animation-delay: 1.4s;
+        }
 
-      @keyframes floatBadge {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-6px); }
-      }
-
-      @media (max-width: 600px) {
         .card {
-          padding: 34px 18px;
+            width: min(760px, 100%);
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(139, 63, 130, 0.12);
+            border-radius: 30px;
+            box-shadow: 0 30px 60px -24px rgba(43, 30, 41, 0.25);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            padding: 42px 28px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(24px) scale(0.98);
+            animation: cardReveal 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards 0.8s;
+            z-index: 1;
+        }
+
+        .card::before,
+        .card::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        .card::before {
+            background: rgba(139, 63, 130, 0.18);
+            top: -90px;
+            left: -60px;
+        }
+
+        .card::after {
+            background: rgba(156, 203, 59, 0.18);
+            bottom: -100px;
+            right: -40px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: rgba(139, 63, 130, 0.08);
+            color: var(--plum-dark);
+            border: 1px solid rgba(139, 63, 130, 0.15);
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            animation: pulseTag 2.2s ease-in-out infinite;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 0 6px rgba(201, 138, 46, 0.15);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.2rem, 6vw, 4.8rem);
+            line-height: 0.98;
+            letter-spacing: -0.06em;
+            color: var(--charcoal);
+            animation: textFloat 1.8s ease-out both;
+        }
+
+        .highlight {
+            display: inline-block;
+            background: linear-gradient(180deg, transparent 58%, rgba(156, 203, 59, 0.5) 58%);
+            padding: 0 0.2em;
+        }
+
+        p {
+            margin: 22px auto 0;
+            max-width: 620px;
+            font-size: 1.08rem;
+            line-height: 1.7;
+            color: rgba(43, 30, 41, 0.8);
+            animation: fadeInUp 1s ease-out 0.9s both;
         }
 
         .btn-row {
-          flex-direction: column;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
         .btn {
-          width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 24px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+            position: relative;
+            overflow: hidden;
         }
-      }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 18px 32px -18px rgba(43, 30, 41, 0.45);
+        }
+
+        .btn:active {
+            transform: translateY(0) scale(0.99);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--plum) 0%, var(--gold) 100%);
+            color: var(--white);
+            box-shadow: 0 18px 28px -16px rgba(139, 63, 130, 0.7);
+        }
+
+        .btn-secondary {
+            background: rgba(139, 63, 130, 0.08);
+            color: var(--plum-dark);
+            border: 1px solid rgba(139, 63, 130, 0.15);
+        }
+
+        .brand-logo {
+            width: min(180px, 52vw);
+            height: auto;
+            display: block;
+            margin: 0 auto 18px;
+            filter: drop-shadow(0 12px 24px rgba(139, 63, 130, 0.16));
+            animation: floatBadge 4s ease-in-out infinite;
+        }
+
+        .page-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgb(40 27 40);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity .5s ease, visibility .5s;
+        }
+
+        .page-loader.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-gif {
+            width: min(320px, 60vw);
+            height: auto;
+            display: block;
+        }
+
+        body.loading {
+            overflow: hidden;
+        }
+
+        @keyframes cardReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(24px) scale(0.98);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes pulseTag {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.04);
+            }
+        }
+
+        @keyframes textFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatOrb {
+            0% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate3d(22px, -18px, 0) scale(1.15);
+            }
+        }
+
+        @keyframes floatBadge {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 34px 18px;
+            }
+
+            .btn-row {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
     </style>
-  </head>
-  <body class="loading">
+</head>
+
+<body class="loading">
     <div id="pageLoader" class="page-loader" aria-live="polite" aria-label="Page loading">
-      <img class="loader-gif" src="../WIMD animation.gif" alt="Loading WIMD Summit" />
+        <img class="loader-gif" src="../WIMD animation.gif" alt="Loading WIMD Summit" />
     </div>
 
     <div class="orb orb-one"></div>
     <div class="orb orb-two"></div>
 
     <main class="card" aria-labelledby="coming-soon-title">
-      <div class="content">
-        <img class="brand-logo" src="../logo.png" alt="Women in Motion Design logo" width="180" height="44" />
+        <div class="content">
+            <img class="brand-logo" src="../logo.png" alt="Women in Motion Design logo" width="180" height="44" />
 
-        <div class="tag">
-          <span class="dot"></span>
-          Going live soon
+            <div class="tag">
+                <span class="dot"></span>
+                Going live soon
+            </div>
+
+            <h1 id="coming-soon-title">
+                We are <span class="highlight">going live soon</span>
+            </h1>
+
+            <p>
+                The Women in Motion Design experience is almost here. We’re preparing something powerful for
+                the next generation of African women in motion design.
+            </p>
+
+            <div class="btn-row">
+                <a class="btn btn-primary" href="../index.html">Back to Home</a>
+                <a class="btn btn-secondary" href="https://www.instagram.com/womeninmotiondesign/" target="_blank"
+                    rel="noopener noreferrer">Get Updates</a>
+            </div>
         </div>
-
-        <h1 id="coming-soon-title">
-          We are <span class="highlight">going live soon</span>
-        </h1>
-
-        <p>
-          The Women in Motion Design experience is almost here. We’re preparing something powerful for
-          the next generation of African women in motion design.
-        </p>
-
-        <div class="btn-row">
-          <a class="btn btn-primary" href="../index.html">Back to Home</a>
-          <a class="btn btn-secondary" href="https://www.instagram.com/womeninmotiondesign/" target="_blank" rel="noopener noreferrer">Get Updates</a>
-        </div>
-      </div>
     </main>
 
     <script>
-      window.addEventListener('load', function () {
-        const loader = document.getElementById('pageLoader');
+        window.addEventListener('load', function () {
+            const loader = document.getElementById('pageLoader');
 
-        setTimeout(function () {
-          if (loader) {
-            loader.classList.add('hide');
-          }
-          document.body.classList.remove('loading');
-        }, 800);
-      });
+            setTimeout(function () {
+                if (loader) {
+                    loader.classList.add('hide');
+                }
+                document.body.classList.remove('loading');
+            }, 800);
+        });
     </script>
-  </body>
+</body>
+
 </html>
