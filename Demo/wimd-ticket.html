@@ -191,7 +191,7 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(90deg, rgba(24, 13, 23, 0.97) 0%, rgba(24, 13, 23, 0.90) 45%, rgba(24, 13, 23, 0.58) 75%, rgba(24, 13, 23, 0.72) 100%),
-                  linear-gradient(180deg, rgba(24, 13, 23, 0.3) 0%, rgba(24, 13, 23, 0.95) 100%);
+        linear-gradient(180deg, rgba(24, 13, 23, 0.3) 0%, rgba(24, 13, 23, 0.95) 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -461,7 +461,7 @@
       height: 100%;
       object-fit: cover;
       border-radius: 48% 48% 10% 10%;
-          opacity: .72;
+      opacity: .72;
 
 
     }
@@ -1103,26 +1103,40 @@
     .tool-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px
+      align-items: center;
+      gap: 14px
     }
 
-    .tool-list span {
-      padding: 13px 20px;
+    .logo-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--charcoal);
+      font-weight: 700;
+      font-size: 14.5px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1.5px solid rgba(139, 63, 130, 0.12);
+      padding: 8px 18px 8px 10px;
       border-radius: 999px;
-      background: var(--gold);
-      color: #ffffff;
-      font-size: 13px;
-      font-weight: 800
+      box-shadow: 0 8px 20px -6px rgba(43, 30, 41, 0.12);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
     }
 
-    .tool-list span:nth-child(2) {
-      background: var(--lime);
-      color: var(--charcoal)
+    .logo-chip:hover {
+      transform: translateY(-4px) scale(1.03);
+      background: #fff;
+      border-color: var(--plum);
+      box-shadow: 0 14px 28px -8px rgba(139, 63, 130, 0.35);
+      color: var(--plum);
     }
 
-    .tool-list span:nth-child(3) {
-      background: var(--plum);
-      color: #ffffff
+    .software-logo-img {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.14);
     }
 
     .speakers {
@@ -1147,10 +1161,36 @@
       background: var(--blush)
     }
 
+    .speaker-photo::after {
+      content: "Revealing soon";
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px solid rgba(139, 63, 130, 0.12);
+      color: var(--plum-dark);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(43, 30, 41, 0.08);
+    }
+
     .speaker-photo img {
       width: 100%;
       height: 100%;
-      object-fit: cover
+      object-fit: cover;
+      filter: blur(8px) saturate(0.7);
+      transform: scale(1.04);
+      opacity: 0.8;
     }
 
     .speaker-number {
@@ -1174,6 +1214,72 @@
       margin: 5px 0 0;
       font-size: 11px;
       color: #5A4A54
+    }
+
+    .moderator-section {
+      background: rgba(255, 255, 255, 0.7);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .moderator-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 48px 0;
+    }
+
+    .moderator-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .moderator-item {
+      background: rgba(139, 63, 130, 0.04);
+      border: 1px solid rgba(139, 63, 130, 0.12);
+      border-radius: 24px;
+      padding: 20px 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 120px;
+    }
+
+    .moderator-thumb {
+      position: relative;
+      width: 78px;
+      min-width: 78px;
+      height: 78px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--blush);
+      border: 1px solid rgba(139, 63, 130, 0.12);
+      box-shadow: 0 12px 24px -18px rgba(43, 30, 41, 0.25);
+    }
+
+    .moderator-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(4px) saturate(0.8);
+      opacity: 0.8;
+    }
+
+    .moderator-item h3 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -.03em;
+      color: var(--charcoal);
+    }
+
+    .moderator-item p {
+      margin: 6px 0 0;
+      font-size: 12px;
+      color: #5A4A54;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .convener {
@@ -1385,19 +1491,46 @@
       animation: shape-float 8s ease-in-out infinite;
       will-change: transform;
     }
-    .brand-shape.slow { animation-duration: 11s; }
-    .brand-shape.spin { animation-name: shape-float-spin; }
+
+    .brand-shape.slow {
+      animation-duration: 11s;
+    }
+
+    .brand-shape.spin {
+      animation-name: shape-float-spin;
+    }
 
     @keyframes shape-float {
-      0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
-      50%       { transform: translateY(-16px) rotate(var(--rot, 0deg)); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(var(--rot, 0deg));
+      }
+
+      50% {
+        transform: translateY(-16px) rotate(var(--rot, 0deg));
+      }
     }
+
     @keyframes shape-float-spin {
-      0%   { transform: translateY(0) rotate(var(--rot, 0deg)); }
-      50%  { transform: translateY(-14px) rotate(calc(var(--rot, 0deg) + 12deg)); }
-      100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+      0% {
+        transform: translateY(0) rotate(var(--rot, 0deg));
+      }
+
+      50% {
+        transform: translateY(-14px) rotate(calc(var(--rot, 0deg) + 12deg));
+      }
+
+      100% {
+        transform: translateY(0) rotate(var(--rot, 0deg));
+      }
     }
-    @media (max-width: 720px) { .brand-shape.hide-mobile { display: none; } }
+
+    @media (max-width: 720px) {
+      .brand-shape.hide-mobile {
+        display: none;
+      }
+    }
 
     /* ── Footer ─────────────────────────────────────────── */
     footer {
@@ -1528,7 +1661,7 @@
       }
 
       /* Center ticket card column on mobile */
-      .ticket-grid > div:last-child {
+      .ticket-grid>div:last-child {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1801,18 +1934,21 @@
       <polyline points="20 6 9 17 4 12"></polyline>
     </symbol>
     <!-- Social icons for footer -->
-    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
     </symbol>
-    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
       <rect x="2" y="9" width="4" height="12"></rect>
       <circle cx="4" cy="4" r="2"></circle>
     </symbol>
     <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      <path
+        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </symbol>
   </svg>
 
@@ -1826,26 +1962,27 @@
           <a href="#program">THE EXPERIENCE</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <a class="header-btn" href="https://forms.gle/NuG6SeNmRKqzdJuB9" target="_blank" rel="noopener noreferrer">Tickets ↗</a>
+        <a class="header-btn" href="#ticket">Tickets ↗</a>
       </div>
     </header>
     <section class="hero">
       <!-- decorative shapes -->
       <img class="brand-shape slow hide-mobile" src="./shape-gold-clover.png"
-           style="top:8%;left:2%;width:110px;opacity:.55;--rot:-18deg;animation-delay:-3s;" alt="">
+        style="top:8%;left:2%;width:110px;opacity:.55;--rot:-18deg;animation-delay:-3s;" alt="">
       <img class="brand-shape hide-mobile" src="./shape-teal-triangle.png"
-           style="top:6%;right:3%;width:90px;opacity:.50;--rot:22deg;animation-delay:-1.5s;" alt="">
+        style="top:6%;right:3%;width:90px;opacity:.50;--rot:22deg;animation-delay:-1.5s;" alt="">
       <img class="brand-shape slow spin hide-mobile" src="./shape-purple-star.png"
-           style="bottom:12%;right:6%;width:75px;opacity:.45;--rot:10deg;animation-delay:-4s;" alt="">
+        style="bottom:12%;right:6%;width:75px;opacity:.45;--rot:10deg;animation-delay:-4s;" alt="">
       <div class="hero-inner wrap">
         <div class="hero-eyebrow-badge">
-          <span class="spark">✦</span> SUMMIT 2026 IS OFFICIAL
+          <span class="spark">✦</span> WIMD SUMMIT 2026 IS OFFICIAL
         </div>
         <h1 class="hero-headline">
           <span class="line-1">THE WAIT</span>
           <span class="line-2">IS <span class="lime-accent">OVER.</span></span>
         </h1>
-        <p class="hero-desc">Your next level in motion design starts with the right people,<br>the right knowledge, and the right room.</p>
+        <p class="hero-desc">Your next level in motion design starts with the right people,<br>the right knowledge, and
+          the right room.</p>
         <div class="hero-footer-bar">
           <div class="hero-meta-items">
             <span class="meta-item item-white">OCT 19 — NOV 2, 2026</span>
@@ -1853,16 +1990,16 @@
             <span class="meta-item item-lime">FULLY VIRTUAL</span>
             <span class="meta-item item-white">8 INDUSTRY WOMEN</span>
           </div>
-          <a class="hero-ticket-cta" href="https://forms.gle/NuG6SeNmRKqzdJuB9" target="_blank" rel="noopener noreferrer">Get your ticket ↗</a>
+          <a class="hero-ticket-cta" href="#ticket">Get your ticket ↗</a>
         </div>
       </div>
     </section>
     <div class="wave plum" aria-hidden="true"></div>
     <section class="dark-section">
       <img class="brand-shape slow hide-mobile" src="./shape-green-pinwheel.png"
-           style="top:10%;left:1%;width:100px;opacity:.30;--rot:30deg;animation-delay:-2s;" alt="">
+        style="top:10%;left:1%;width:100px;opacity:.30;--rot:30deg;animation-delay:-2s;" alt="">
       <img class="brand-shape spin hide-mobile" src="./shape-mauve-cluster.png"
-           style="top:15%;right:2%;width:90px;opacity:.28;--rot:-12deg;animation-delay:-5s;" alt="">
+        style="top:15%;right:2%;width:90px;opacity:.28;--rot:-12deg;animation-delay:-5s;" alt="">
       <div class="wrap dark-grid">
         <div>
           <span class="eyebrow alt"><svg class="icon" style="width:14px;height:14px;stroke:var(--plum-dark)">
@@ -2040,7 +2177,8 @@
             <div class="ticket-perforation" aria-hidden="true">
               <div class="ticket-perf-line"></div>
             </div>
-            <div class="ticket-stub"><a class="button lime" href="https://forms.gle/NuG6SeNmRKqzdJuB9" target="_blank" rel="noopener noreferrer">Get Your Ticket Now ↗</a>
+            <div class="ticket-stub"><a class="button lime" href="https://forms.gle/NuG6SeNmRKqzdJuB9" target="_blank"
+                rel="noopener noreferrer">Get Your Ticket Now ↗</a>
               <div class="ticket-barcode-wrap"><svg class="ticket-barcode" viewBox="0 0 280 40" fill="currentColor"
                   aria-hidden="true">
                   <rect x="0" y="0" width="3" height="40"></rect>
@@ -2093,7 +2231,7 @@
             </div>
           </div>
           <div class="countdown">
-            <p class="countdown-label">Starts in</p>
+            <p class="countdown-label">Summit Starts in</p>
             <div class="countdown-grid">
               <div><strong id="days">--</strong><span>Days</span></div>
               <div><strong id="hours">--</strong><span>Hours</span></div>
@@ -2113,7 +2251,7 @@
                 <use href="#i-users"></use>
               </svg>Who is WIMD for?</span>
             <h2>There is no perfect level to start from.</h2>
-            <p class="muted">You can join from your phone or PC. Start with what you have. Learn. Practice. Grow.</p>
+            <p class="">You can join from your phone or PC. Start with what you have. Learn. Practice. Grow.</p>
           </div>
           <div class="audience-list">
             <div><i></i><span>Have never tried motion design before</span></div>
@@ -2133,7 +2271,28 @@
               </svg>Your tools, your way</span>
             <h3>No expensive equipment required.</h3>
           </div>
-          <div class="tool-list"><span>Alight Motion</span><span>CapCut</span><span>Adobe After Effects</span></div>
+          <div class="tool-list">
+            <div class="logo-chip">
+              <img src="../assets/logo-after-effects.png" alt="Adobe After Effects" class="software-logo-img"
+                loading="lazy" decoding="async" width="32" height="32" />
+              <span>After Effects</span>
+            </div>
+            <div class="logo-chip">
+              <img src="../assets/logo-alight-motion.jpg" alt="Alight Motion" class="software-logo-img" loading="lazy"
+                decoding="async" width="32" height="32" />
+              <span>Alight Motion</span>
+            </div>
+            <div class="logo-chip">
+              <img src="../assets/logo-capcut.png" alt="CapCut" class="software-logo-img" loading="lazy"
+                decoding="async" width="32" height="32" />
+              <span>CapCut</span>
+            </div>
+            <div class="logo-chip">
+              <img src="../assets/logo-node-video.jpg" alt="Node Video" class="software-logo-img" loading="lazy"
+                decoding="async" width="32" height="32" />
+              <span>Node Video</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2200,6 +2359,46 @@
         </div>
       </div>
     </section>
+    <section class="moderator-section" id="moderator">
+      <div class="wrap moderator-grid">
+        <div>
+          <span class="eyebrow alt"><svg class="icon" style="width:14px;height:14px;stroke:var(--plum-dark)">
+              <use href="#i-star"></use>
+            </svg>Instructors</span>
+          <h2 style="margin:0 0 22px;">MC / Moderator &amp; instructors</h2>
+        </div>
+        <div class="moderator-list">
+          <article class="moderator-item">
+            <div class="moderator-thumb"><img src="/wimd/speaker-esther.jpg" alt="Cav Digital" loading="lazy" /></div>
+            <div>
+              <h3>Cav Digital</h3>
+              <p>Instructor</p>
+            </div>
+          </article>
+          <article class="moderator-item">
+            <div class="moderator-thumb"><img src="/wimd/speaker-glory.jpg" alt="Oreoluwa Odetola" loading="lazy" /></div>
+            <div>
+              <h3>Oreoluwa Odetola</h3>
+              <p>Instructor</p>
+            </div>
+          </article>
+          <article class="moderator-item">
+            <div class="moderator-thumb"><img src="../IMG_4387 (1).webp" alt="Femi Maven" loading="lazy" /></div>
+            <div>
+              <h3>Femi Maven</h3>
+              <p>Instructor</p>
+            </div>
+          </article>
+          <article class="moderator-item">
+            <div class="moderator-thumb"><img src="/wimd/speaker-tina.jpg" alt="Faye Smiles" loading="lazy" /></div>
+            <div>
+              <h3>Faye Smiles</h3>
+              <p>MC</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
     <section class="convener">
       <div class="wrap convener-grid">
         <div class="convener-photo"><img src="../IMG_4387 (1).webp" alt="Femi Maven" loading="lazy" /></div>
@@ -2209,12 +2408,10 @@
             </svg>About the convener</span>
           <h2>Meet Femi Maven.</h2>
           <p><strong>Founder, Maven Mint Academy</strong></p>
-          <p>Oluwafemi Oyenuga, professionally known as Femi Maven and widely called “The King of Value,” is an
-            accomplished motion graphics designer, creative educator, public speaker, and founder. He has worked with
-            brands across fintech, SaaS, and other sectors, and founded Maven Mint, a motion design and animation
-            academy that has trained thousands of creatives.</p>
-          <p class="muted">WIMD was created from that same desire: to help more women discover what is possible for them
-            in motion design.</p>
+          <p>Oluwafemi Oyenuga, professionally known as Femi Maven and widely recognized as “The King of Value,” is an accomplished motion graphics designer, creative educator, public speaker, and founder.</p>
+          <p>He has worked with brands across fintech, SaaS, and other industries, and is the founder of Maven Mint Academy, a motion design and animation academy that has trained thousands of creatives across Africa and beyond.</p>
+          <p>Over the years, Femi has received multiple awards and recognitions for his contributions and impact in the creative industry. He is also the convener of Women in Motion Design (WIMD), an initiative created to empower women with the knowledge, resources, opportunities, and support they need to thrive in motion design and build successful careers.</p>
+          <p>At the heart of Femi’s work is a deep commitment to impact. He is driven by a mission to reach millions of lives, create opportunities for others, and be a blessing to his generation through creativity, education, and purposeful leadership.</p>
         </div>
       </div>
     </section>
@@ -2281,10 +2478,13 @@
               Speaker sessions will be on Google Meet and practical training on Telegram.</p>
           </details>
           <details>
-            <summary><span class="summary-copy"><b>07</b><span>Is joining the waitlist free?</span></span><span
+            <summary><span class="summary-copy"><b>07</b><span>How Much Is The Ticket?</span></span><span
                 class="plus">+</span></summary>
-            <p>Yes. Joining the waitlist is completely free. The waitlist closes on September 25, 2026. Ticket
-              registration opens September 26, 2026 at 9:00 AM and closes October 18, 2026.</p>
+            <p>The WIMD Summit begins on October 19th, 2026.
+
+              Ticket Fee: ₦5,000
+
+              Your ticket gives you access to everything the WIMD Summit has to offer.</p>
           </details>
           <details>
             <summary><span class="summary-copy"><b>08</b><span>Will the sessions be recorded?</span></span><span
@@ -2313,14 +2513,15 @@
           </svg>October 19 – November 2, 2026</span>
         <h2>Ready to take<br />your place?</h2>
         <p>You don’t need to be an expert. You just need to be willing to learn, create, and grow.</p><a class="button"
-          href="https://forms.gle/NuG6SeNmRKqzdJuB9" target="_blank" rel="noopener noreferrer">Get your WIMD 2026 ticket ↗</a>
+          href="#ticket">Get your WIMD 2026 ticket
+          ↗</a>
       </div>
     </section>
     <footer>
       <div class="wrap">
         <div class="footer-top">
           <div class="footer-logo">
-            <img src="./logo-white.png" alt="Women in Motion Design logo" loading="lazy" width="120" height="30"
+            <img src="../logo.png" alt="Women in Motion Design logo" loading="lazy" width="120" height="30"
               onerror="this.onerror=null;this.src='./logo-black.png'">
             <p>A virtual summit empowering the next generation of African women to build careers in motion design.
               Convened by Femi Maven, founder of Maven Mint Academy.</p>
@@ -2364,7 +2565,7 @@
               <a href="https://www.linkedin.com/company/womeninmotiondesign/" target="_blank"
                 rel="noopener noreferrer">LinkedIn</a>
               <a href="https://x.com/womeninmotionn" target="_blank" rel="noopener noreferrer">X</a>
-              <a href="https://forms.gle/NuG6SeNmRKqzdJuB9" target="_blank" rel="noopener noreferrer">Get Ticket ↗</a>
+              <a href="#ticket">Get Ticket ↗</a>
             </div>
           </div>
         </div>
