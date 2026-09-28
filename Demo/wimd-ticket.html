@@ -360,12 +360,17 @@
 
     .hero-desc {
       margin: 28px 0 0;
+      width: min(80%, 680px);
       font-size: clamp(1.15rem, 2.2vw, 1.45rem);
       font-weight: 600;
       line-height: 1.42;
       color: #FFFFFF;
       max-width: 680px;
       letter-spacing: -0.01em;
+    }
+
+    .hero-desc br {
+      display: none;
     }
 
     .hero-footer-bar {
@@ -2160,8 +2165,7 @@
           <span class="line-1">THE WAIT</span>
           <span class="line-2">IS <span class="lime-accent">OVER.</span></span>
         </h1>
-        <p class="hero-desc">Your next level in motion design starts with the right people,<br>the right knowledge, and
-          the right room.</p>
+        <p class="hero-desc">Your next level in motion design starts with the right people, the right knowledge, and the right room.</p>
         <div class="hero-footer-bar">
           <div class="hero-meta-items">
             <span class="meta-item item-white">OCT 19 — NOV 2, 2026</span>
