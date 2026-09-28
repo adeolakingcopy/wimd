@@ -1679,14 +1679,14 @@
       will-change: auto;
     }
 
-    .reveal > * {
+    .reveal>* {
       opacity: 0;
       transform: translateY(28px) scale(0.98);
       transition: opacity .7s cubic-bezier(0.2, 0, 0.2, 1), transform .7s cubic-bezier(0.2, 0, 0.2, 1);
       will-change: opacity, transform;
     }
 
-    .reveal.in > * {
+    .reveal.in>* {
       opacity: 1;
       transform: translateY(0) scale(1);
     }
@@ -1697,8 +1697,9 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .reveal,
-      .reveal > * {
+      .reveal>* {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
