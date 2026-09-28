@@ -686,15 +686,15 @@
       position: relative;
       z-index: 1;
       clip-path: ellipse(75% 100% at 50% 100%);
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .7s cubic-bezier(0.2, 0, 0.2, 1), transform .7s cubic-bezier(0.2, 0, 0.2, 1);
-      will-change: opacity, transform;
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
     }
 
     .wave.in {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
 
     .wave.plum {
@@ -711,6 +711,14 @@
 
     section {
       padding: 112px 0;
+    }
+
+    .dark-section,
+    .program,
+    .audience {
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
 
     .dark-section {
@@ -967,6 +975,7 @@
     .ticket-card {
       position: sticky;
       top: 24px;
+      z-index: 1;
       border-radius: 24px;
       background: linear-gradient(165deg, #3A2836 0%, #241622 100%);
       color: #ffffff;
@@ -1165,6 +1174,8 @@
     }
 
     .countdown {
+      position: relative;
+      z-index: 2;
       margin-top: 20px;
       padding: 24px;
       border-radius: 18px;
@@ -1662,13 +1673,20 @@
     }
 
     .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
+    }
+
+    .reveal > * {
       opacity: 0;
-      transform: translateY(35px) scale(0.96);
+      transform: translateY(28px) scale(0.98);
       transition: opacity .7s cubic-bezier(0.2, 0, 0.2, 1), transform .7s cubic-bezier(0.2, 0, 0.2, 1);
       will-change: opacity, transform;
     }
 
-    .reveal.in {
+    .reveal.in > * {
       opacity: 1;
       transform: translateY(0) scale(1);
     }
@@ -1679,7 +1697,8 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .reveal {
+      .reveal,
+      .reveal > * {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
@@ -2250,8 +2269,8 @@
         </div>
       </div>
     </section>
-    <div class="wave plum reveal" aria-hidden="true"></div>
-    <section class="dark-section reveal">
+    <div class="wave plum" aria-hidden="true"></div>
+    <section class="dark-section">
       <img class="brand-shape slow hide-mobile" data-depth="9" src="./shape-green-pinwheel.png"
         style="top:10%;left:1%;width:100px;opacity:.30;--rot:30deg;animation-delay:-2s;" alt="">
       <img class="brand-shape spin hide-mobile" data-depth="14" src="./shape-mauve-cluster.png"
@@ -2274,8 +2293,8 @@
         </div>
       </div>
     </section>
-    <div class="wave pink reveal" aria-hidden="true"></div>
-    <section id="program" class="program reveal">
+    <div class="wave pink" aria-hidden="true"></div>
+    <section id="program" class="program">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -2503,8 +2522,8 @@
         </div>
       </div>
     </section>
-    <div class="wave blush reveal" aria-hidden="true"></div>
-    <section class="audience reveal">
+    <div class="wave blush" aria-hidden="true"></div>
+    <section class="audience">
       <div class="wrap">
         <div class="audience-grid">
           <div>
