@@ -149,6 +149,123 @@
       box-shadow: 0 10px 24px rgba(217, 119, 54, 0.5);
     }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hamburger {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: transparent;
+      border: 1.5px solid rgba(43, 30, 41, 0.18);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      padding: 0;
+    }
+
+    .hamburger svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--charcoal);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    .hamburger .icon-close {
+      display: none;
+    }
+
+    .hamburger[aria-expanded="true"] .icon-menu {
+      display: none;
+    }
+
+    .hamburger[aria-expanded="true"] .icon-close {
+      display: block;
+    }
+
+    .mobile-panel {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 290px;
+      height: 100vh;
+      background: var(--blush-soft);
+      flex-direction: column;
+      gap: 0;
+      padding: 80px 20px 40px;
+      overflow-y: auto;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 95;
+      box-shadow: -8px 0 32px rgba(43, 30, 41, 0.2);
+    }
+
+    .mobile-panel::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(43, 30, 41, 0.45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+    }
+
+    .mobile-panel.open::before {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-panel.open {
+      display: flex;
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .mobile-panel a {
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      opacity: 0.9;
+      transition: opacity 0.15s, background-color 0.15s;
+      border-bottom: 1px solid rgba(43, 30, 41, 0.06);
+      display: block;
+      border-radius: 10px;
+    }
+
+    .mobile-panel a:hover {
+      opacity: 1;
+      background-color: rgba(139, 63, 130, 0.08);
+      color: var(--plum);
+    }
+
+    .mobile-panel .mobile-ticket-link {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #B5486D 0%, #D97736 100%);
+      color: #ffffff;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(181, 72, 109, 0.35);
+      border: 0;
+    }
+
     .button {
       display: inline-flex;
       align-items: center;
@@ -1648,6 +1765,18 @@
         display: none;
       }
 
+      .header-actions {
+        display: flex;
+      }
+
+      .header-btn {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
       .footer-top {
         flex-direction: column;
       }
@@ -1718,6 +1847,14 @@
       .challenge-grid {
         gap: 20px;
       }
+
+      .moderator-list {
+        grid-template-columns: 1fr;
+      }
+
+      .moderator-item {
+        min-height: unset;
+      }
     }
 
     @media(max-width:580px) {
@@ -1731,6 +1868,31 @@
 
       .hero {
         padding: 48px 0 100px;
+      }
+
+      .moderator-grid {
+        padding: 38px 0;
+      }
+
+      .moderator-item {
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 14px;
+      }
+
+      .moderator-thumb {
+        width: 62px;
+        min-width: 62px;
+        height: 62px;
+        border-radius: 14px;
+      }
+
+      .moderator-item h3 {
+        font-size: 18px;
+      }
+
+      .moderator-item p {
+        font-size: 10px;
       }
 
       .hero-headline {
@@ -1962,8 +2124,25 @@
           <a href="#program">THE EXPERIENCE</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <a class="header-btn" href="#ticket">Tickets ↗</a>
+        <div class="header-actions">
+          <a class="header-btn" href="#ticket">Tickets ↗</a>
+          <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-panel"
+            aria-label="Open menu">
+            <svg class="icon-menu" viewBox="0 0 24 24">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg class="icon-close" viewBox="0 0 24 24">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
       </div>
+      <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile navigation">
+        <a href="#speakers">Speakers</a>
+        <a href="#program">The Experience</a>
+        <a href="#faq">FAQ</a>
+        <a class="mobile-ticket-link" href="#ticket">Tickets ↗</a>
+      </nav>
     </header>
     <section class="hero">
       <!-- decorative shapes -->
@@ -2098,13 +2277,13 @@
             <div class="training-date"><span>FRIDAY, OCTOBER 30</span><span class="training-number">05</span></div>
             <h3>After Effects Basics</h3>
             <p>Get familiar with the interface, tools and workflow for motion graphics.</p>
-            <p class="instructor">With Esther Chidinma</p>
+            <p class="instructor">With Oreoluwa Odetola</p>
           </article>
           <article class="training">
             <div class="training-date"><span>SATURDAY, OCTOBER 31</span><span class="training-number">06</span></div>
             <h3>SaaS Video Breakdown</h3>
             <p>An inside look at the creative and production process for a SaaS video.</p>
-            <p class="instructor">With Esther Chidinma</p>
+            <p class="instructor">With Oreoluwa Odetola</p>
           </article>
           <article class="training">
             <div class="training-date"><span>SUNDAY, NOVEMBER 1</span><span class="training-number">07</span></div>
@@ -2324,7 +2503,7 @@
             <div class="speaker-photo"><img src="/wimd/speaker-esther.jpg" alt="Esther Chidinma" loading="lazy" /><span
                 class="speaker-number">03</span></div>
             <h3>Esther Chidinma</h3>
-            <p>Senior Motion Designer, Freshjuice</p>
+            <p> Creative Director at Scene8 Studio</p>
           </article>
           <article class="speaker">
             <div class="speaker-photo"><img src="/wimd/speaker-dami.jpg" alt="Dami Olaleye" loading="lazy" /><span
@@ -2810,6 +2989,40 @@
         btn.addEventListener("click", function () {
           fireConfetti();
         });
+      });
+    })();
+
+    (function () {
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobilePanel = document.getElementById('mobile-panel');
+
+      if (!hamburgerBtn || !mobilePanel) return;
+
+      function closeMenu() {
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        mobilePanel.classList.remove('open');
+      }
+
+      hamburgerBtn.addEventListener('click', function () {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!isExpanded));
+        mobilePanel.classList.toggle('open');
+      });
+
+      mobilePanel.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      mobilePanel.addEventListener('click', function (e) {
+        if (e.target === mobilePanel) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobilePanel.classList.contains('open')) {
+          closeMenu();
+        }
       });
     })();
   </script>
