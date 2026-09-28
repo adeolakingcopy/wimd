@@ -234,6 +234,33 @@
       transform: translateX(0);
     }
 
+    .mobile-panel-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(43, 30, 41, 0.12);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.5);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--charcoal);
+      padding: 0;
+      z-index: 2;
+    }
+
+    .mobile-panel-close svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
     .mobile-panel a {
       padding: 16px 20px;
       font-weight: 700;
@@ -1384,8 +1411,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: blur(4px) saturate(0.8);
-      opacity: 0.8;
+      opacity: 1;
+      filter: none;
     }
 
     .moderator-item h3 {
@@ -2144,6 +2171,11 @@
         </div>
       </div>
       <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile navigation">
+        <button class="mobile-panel-close" id="mobile-panel-close" aria-label="Close menu" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
         <a href="#speakers">Speakers</a>
         <a href="#program">The Experience</a>
         <a href="#faq">FAQ</a>
@@ -2212,10 +2244,15 @@
                 <use href="#i-book"></use>
               </svg>What will you learn?</span>
             <h2>Two weeks designed for learning and growth.</h2>
+            
           </div>
           <p>Industry conversations followed by hands-on practical training, every day.</p>
         </div>
+         <span class="eyebrow alt"><svg class="icon" style="width:14px;height:14px;stroke:var(--plum-dark)">
+                <use href="#i-play"></use>
+              </svg>Week 1 / Speaker Sessions</span>
         <div class="week-one">
+          
           <article class="week-item"><span class="day">MON</span>
             <h3>Breaking Into the Industry</h3>
             <p>How to Build a Career in Fintech and Beyond</p>
@@ -2494,52 +2531,52 @@
         </div>
         <div class="speakers-grid">
           <article class="speaker">
-            <div class="speaker-photo"><img src="/wimd/speaker-glory.jpg" alt="Glory Mpamah" loading="lazy" /><span
+            <div class="speaker-photo"><img src="/wimd/speaker-glory.jpg" alt="Revealing soon" loading="lazy" /><span
                 class="speaker-number">01</span></div>
-            <h3>Glory Mpamah</h3>
-            <p>Lead Motion Designer, Moniepoint</p>
+            <h3>Revealing soon</h3>
+            <p>Revealing soon</p>
           </article>
           <article class="speaker">
-            <div class="speaker-photo"><img src="/wimd/speaker-rebecca.jpg" alt="Rebecca Thompson"
+            <div class="speaker-photo"><img src="/wimd/speaker-rebecca.jpg" alt="Revealing soon"
                 loading="lazy" /><span class="speaker-number">02</span></div>
-            <h3>Rebecca Thompson</h3>
-            <p>Senior Motion Designer, Shipper.now</p>
+            <h3>Revealing soon</h3>
+            <p>Revealing soon</p>
           </article>
           <article class="speaker">
-            <div class="speaker-photo"><img src="/wimd/speaker-esther.jpg" alt="Esther Chidinma" loading="lazy" /><span
+            <div class="speaker-photo"><img src="/wimd/speaker-esther.jpg" alt="Revealing soon" loading="lazy" /><span
                 class="speaker-number">03</span></div>
-            <h3>Esther Chidinma</h3>
-            <p> Creative Director at Scene8 Studio</p>
+            <h3>Revealing soon</h3>
+            <p>Revealing soon</p>
           </article>
           <article class="speaker">
-            <div class="speaker-photo"><img src="/wimd/speaker-dami.jpg" alt="Dami Olaleye" loading="lazy" /><span
+            <div class="speaker-photo"><img src="/wimd/speaker-dami.jpg" alt="Revealing soon" loading="lazy" /><span
                 class="speaker-number">04</span></div>
-            <h3>Dami Olaleye</h3>
-            <p>Senior Motion Designer, Petra Christian Centre</p>
+            <h3>Revealing soon</h3>
+            <p>Revealing soon</p>
           </article>
           <article class="speaker">
-            <div class="speaker-photo"><img src="/wimd/speaker-omobolanle.jpg" alt="Omobolanle Banwo"
+            <div class="speaker-photo"><img src="/wimd/speaker-omobolanle.jpg" alt="Revealing soon"
                 loading="lazy" /><span class="speaker-number">05</span></div>
-            <h3>Omobolanle Banwo</h3>
-            <p>Brand Designer &amp; Founder, Geneza Brands</p>
+            <h3>Revealing soon</h3>
+            <p>Revealing soon</p>
           </article>
           <article class="speaker">
-            <div class="speaker-photo"><img src="/wimd/speaker-boluwatife.jpg" alt="Boluwatife Awakan"
+            <div class="speaker-photo"><img src="/wimd/speaker-boluwatife.jpg" alt="Revealing soon"
                 loading="lazy" /><span class="speaker-number">06</span></div>
-            <h3>Boluwatife Awakan</h3>
-            <p>Brand Designer &amp; Co-Founder, Lilac Africa</p>
+            <h3>Revealing soon</h3>
+            <p>Revealing soon</p>
           </article>
           <article class="speaker">
-            <div class="speaker-photo"><img src="/wimd/speaker-stephanie.jpg" alt="Stephanie Inidara"
+            <div class="speaker-photo"><img src="/wimd/speaker-stephanie.jpg" alt="Revealing soon"
                 loading="lazy" /><span class="speaker-number">07</span></div>
-            <h3>Stephanie Inidara</h3>
-            <p>Graphic Designer &amp; Packaging Design Expert</p>
+            <h3>Revealing soon</h3>
+            <p>Revealing soon</p>
           </article>
           <article class="speaker">
-            <div class="speaker-photo"><img src="/wimd/speaker-tina.jpg" alt="Tina Brown" loading="lazy" /><span
+            <div class="speaker-photo"><img src="/wimd/speaker-tina.jpg" alt="Revealing soon" loading="lazy" /><span
                 class="speaker-number">08</span></div>
-            <h3>Tina Brown</h3>
-            <p>Senior Brand Designer</p>
+            <h3>Revealing soon</h3>
+            <p>Revealing soon</p>
           </article>
         </div>
       </div>
@@ -2554,14 +2591,14 @@
         </div>
         <div class="moderator-list">
           <article class="moderator-item">
-            <div class="moderator-thumb"><img src="/wimd/speaker-esther.jpg" alt="Cav Digital" loading="lazy" /></div>
+            <div class="moderator-thumb"><img src="../assets/Cav Digital.jpeg" alt="Cav Digital" loading="lazy" /></div>
             <div>
               <h3>Cav Digital</h3>
               <p>Instructor</p>
             </div>
           </article>
           <article class="moderator-item">
-            <div class="moderator-thumb"><img src="/wimd/speaker-glory.jpg" alt="Oreoluwa Odetola" loading="lazy" />
+            <div class="moderator-thumb"><img src="../assets/Oreoluwa Odetola.jpeg" alt="Oreoluwa Odetola" loading="lazy" />
             </div>
             <div>
               <h3>Oreoluwa Odetola</h3>
@@ -2576,7 +2613,7 @@
             </div>
           </article>
           <article class="moderator-item">
-            <div class="moderator-thumb"><img src="/wimd/speaker-tina.jpg" alt="Faye Smiles" loading="lazy" /></div>
+            <div class="moderator-thumb"><img src="../assets/Faye Smiles.jpeg" alt="Faye Smiles" loading="lazy" /></div>
             <div>
               <h3>Faye Smiles</h3>
               <p>MC</p>
@@ -3010,6 +3047,7 @@
     (function () {
       const hamburgerBtn = document.getElementById('hamburger-btn');
       const mobilePanel = document.getElementById('mobile-panel');
+      const mobilePanelClose = document.getElementById('mobile-panel-close');
 
       if (!hamburgerBtn || !mobilePanel) return;
 
@@ -3023,6 +3061,10 @@
         this.setAttribute('aria-expanded', String(!isExpanded));
         mobilePanel.classList.toggle('open');
       });
+
+      if (mobilePanelClose) {
+        mobilePanelClose.addEventListener('click', closeMenu);
+      }
 
       mobilePanel.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', closeMenu);
