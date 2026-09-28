@@ -681,11 +681,20 @@
 
     .wave {
       height: 64px;
-      margin-top: -18px;
-      margin-bottom: -1px;
+      margin-top: -30px;
+      margin-bottom: -2px;
       position: relative;
       z-index: 1;
       clip-path: ellipse(75% 100% at 50% 100%);
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s cubic-bezier(0.2, 0, 0.2, 1), transform .7s cubic-bezier(0.2, 0, 0.2, 1);
+      will-change: opacity, transform;
+    }
+
+    .wave.in {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .wave.plum {
@@ -708,6 +717,8 @@
       background: var(--grad-deep-plum);
       color: #ffffff;
       position: relative;
+      margin-top: -2px;
+      padding-top: 90px;
     }
 
     .dark-grid {
@@ -1650,6 +1661,31 @@
       animation-name: shape-float-spin;
     }
 
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px) scale(0.96);
+      transition: opacity .7s cubic-bezier(0.2, 0, 0.2, 1), transform .7s cubic-bezier(0.2, 0, 0.2, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .tilt-3d {
+      transition: transform .25s ease, box-shadow .25s ease;
+      transform-style: preserve-3d;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
     @keyframes shape-float {
 
       0%,
@@ -2184,13 +2220,13 @@
     </header>
     <section class="hero">
       <!-- decorative shapes -->
-      <img class="brand-shape slow hide-mobile" src="./shape-gold-clover.png"
+      <img class="brand-shape slow hide-mobile" data-depth="12" src="./shape-gold-clover.png"
         style="top:8%;left:2%;width:110px;opacity:.55;--rot:-18deg;animation-delay:-3s;" alt="">
-      <img class="brand-shape hide-mobile" src="./shape-teal-triangle.png"
+      <img class="brand-shape hide-mobile" data-depth="16" src="./shape-teal-triangle.png"
         style="top:6%;right:3%;width:90px;opacity:.50;--rot:22deg;animation-delay:-1.5s;" alt="">
-      <img class="brand-shape slow spin hide-mobile" src="./shape-purple-star.png"
+      <img class="brand-shape slow spin hide-mobile" data-depth="10" src="./shape-purple-star.png"
         style="bottom:12%;right:6%;width:75px;opacity:.45;--rot:10deg;animation-delay:-4s;" alt="">
-      <div class="hero-inner wrap">
+      <div class="hero-inner wrap reveal">
         <div class="hero-eyebrow-badge">
           <span class="spark">✦</span> WIMD SUMMIT 2026 IS OFFICIAL
         </div>
@@ -2211,11 +2247,11 @@
         </div>
       </div>
     </section>
-    <div class="wave plum" aria-hidden="true"></div>
-    <section class="dark-section">
-      <img class="brand-shape slow hide-mobile" src="./shape-green-pinwheel.png"
+    <div class="wave plum reveal" aria-hidden="true"></div>
+    <section class="dark-section reveal">
+      <img class="brand-shape slow hide-mobile" data-depth="9" src="./shape-green-pinwheel.png"
         style="top:10%;left:1%;width:100px;opacity:.30;--rot:30deg;animation-delay:-2s;" alt="">
-      <img class="brand-shape spin hide-mobile" src="./shape-mauve-cluster.png"
+      <img class="brand-shape spin hide-mobile" data-depth="14" src="./shape-mauve-cluster.png"
         style="top:15%;right:2%;width:90px;opacity:.28;--rot:-12deg;animation-delay:-5s;" alt="">
       <div class="wrap dark-grid">
         <div>
@@ -2235,8 +2271,8 @@
         </div>
       </div>
     </section>
-    <div class="wave pink" aria-hidden="true"></div>
-    <section id="program" class="program">
+    <div class="wave pink reveal" aria-hidden="true"></div>
+    <section id="program" class="program reveal">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -2337,7 +2373,7 @@
         </div>
       </div>
     </section>
-    <section class="challenge">
+    <section class="challenge reveal">
       <div class="wrap challenge-grid">
         <div>
           <span class="eyebrow alt"><svg class="icon" style="width:14px;height:14px;stroke:var(--plum-dark)">
@@ -2349,7 +2385,7 @@
           brand-new smartphones.</p>
       </div>
     </section>
-    <section id="ticket" class="ticket-section">
+    <section  class="ticket-section reveal">
       <div class="wrap ticket-grid">
         <div>
           <span class="eyebrow alt"><svg class="icon" style="width:14px;height:14px;stroke:var(--plum-dark)">
@@ -2370,7 +2406,7 @@
           </div>
         </div>
         <div>
-          <div class="ticket-card">
+          <div class="ticket-card tilt-3d reveal">
             <div class="ticket-foil" aria-hidden="true"></div>
             <div class="ticket-head">
               <div class="ticket-brand">
@@ -2399,7 +2435,7 @@
             <div class="ticket-perforation" aria-hidden="true">
               <div class="ticket-perf-line"></div>
             </div>
-            <div class="ticket-stub"><a class="button lime" href="https://selar.com/wimdsummit-ticket" target="_blank"
+            <div id="ticket" class="ticket-stub"><a class="button lime" href="https://selar.com/wimdsummit-ticket" target="_blank"
                 rel="noopener noreferrer">Get Your Ticket Now ↗</a>
               <div class="ticket-barcode-wrap"><svg class="ticket-barcode" viewBox="0 0 280 40" fill="currentColor"
                   aria-hidden="true">
@@ -2452,7 +2488,7 @@
               <p class="fine">Registration closes October 18, 2026</p>
             </div>
           </div>
-          <div class="countdown">
+          <div class="countdown reveal">
             <p class="countdown-label">Summit Starts in</p>
             <div class="countdown-grid">
               <div><strong id="days">--</strong><span>Days</span></div>
@@ -2464,8 +2500,8 @@
         </div>
       </div>
     </section>
-    <div class="wave blush" aria-hidden="true"></div>
-    <section class="audience">
+    <div class="wave blush reveal" aria-hidden="true"></div>
+    <section class="audience reveal">
       <div class="wrap">
         <div class="audience-grid">
           <div>
@@ -2518,7 +2554,7 @@
         </div>
       </div>
     </section>
-    <section id="speakers" class="speakers">
+    <section id="speakers" class="speakers reveal">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -2530,49 +2566,49 @@
           <p>Women with real lessons to share from across the creative industry.</p>
         </div>
         <div class="speakers-grid">
-          <article class="speaker">
+          <article class="speaker tilt-3d reveal">
             <div class="speaker-photo"><img src="/wimd/speaker-glory.jpg" alt="Revealing soon" loading="lazy" /><span
                 class="speaker-number">01</span></div>
             <h3>Revealing soon</h3>
             <p>Revealing soon</p>
           </article>
-          <article class="speaker">
+          <article class="speaker tilt-3d reveal">
             <div class="speaker-photo"><img src="/wimd/speaker-rebecca.jpg" alt="Revealing soon" loading="lazy" /><span
                 class="speaker-number">02</span></div>
             <h3>Revealing soon</h3>
             <p>Revealing soon</p>
           </article>
-          <article class="speaker">
+          <article class="speaker tilt-3d reveal">
             <div class="speaker-photo"><img src="/wimd/speaker-esther.jpg" alt="Revealing soon" loading="lazy" /><span
                 class="speaker-number">03</span></div>
             <h3>Revealing soon</h3>
             <p>Revealing soon</p>
           </article>
-          <article class="speaker">
+          <article class="speaker tilt-3d reveal">
             <div class="speaker-photo"><img src="/wimd/speaker-dami.jpg" alt="Revealing soon" loading="lazy" /><span
                 class="speaker-number">04</span></div>
             <h3>Revealing soon</h3>
             <p>Revealing soon</p>
           </article>
-          <article class="speaker">
+          <article class="speaker tilt-3d reveal">
             <div class="speaker-photo"><img src="/wimd/speaker-omobolanle.jpg" alt="Revealing soon"
                 loading="lazy" /><span class="speaker-number">05</span></div>
             <h3>Revealing soon</h3>
             <p>Revealing soon</p>
           </article>
-          <article class="speaker">
+          <article class="speaker tilt-3d reveal">
             <div class="speaker-photo"><img src="/wimd/speaker-boluwatife.jpg" alt="Revealing soon"
                 loading="lazy" /><span class="speaker-number">06</span></div>
             <h3>Revealing soon</h3>
             <p>Revealing soon</p>
           </article>
-          <article class="speaker">
+          <article class="speaker tilt-3d reveal">
             <div class="speaker-photo"><img src="/wimd/speaker-stephanie.jpg" alt="Revealing soon"
                 loading="lazy" /><span class="speaker-number">07</span></div>
             <h3>Revealing soon</h3>
             <p>Revealing soon</p>
           </article>
-          <article class="speaker">
+          <article class="speaker tilt-3d reveal">
             <div class="speaker-photo"><img src="/wimd/speaker-tina.jpg" alt="Revealing soon" loading="lazy" /><span
                 class="speaker-number">08</span></div>
             <h3>Revealing soon</h3>
@@ -2581,7 +2617,7 @@
         </div>
       </div>
     </section>
-    <section class="moderator-section" id="moderator">
+    <section class="moderator-section reveal" id="moderator">
       <div class="wrap moderator-grid">
         <div>
           <span class="eyebrow alt"><svg class="icon" style="width:14px;height:14px;stroke:var(--plum-dark)">
@@ -2590,14 +2626,14 @@
           <h2 style="margin:0 0 22px;">MC / Moderator &amp; instructors</h2>
         </div>
         <div class="moderator-list">
-          <article class="moderator-item">
+          <article class="moderator-item tilt-3d reveal">
             <div class="moderator-thumb"><img src="../assets/Cav Digital.jpeg" alt="Cav Digital" loading="lazy" /></div>
             <div>
               <h3>Cav Digital</h3>
               <p>Instructor</p>
             </div>
           </article>
-          <article class="moderator-item">
+          <article class="moderator-item tilt-3d reveal">
             <div class="moderator-thumb"><img src="../assets/Oreoluwa Odetola.jpeg" alt="Oreoluwa Odetola"
                 loading="lazy" />
             </div>
@@ -2606,14 +2642,14 @@
               <p>Instructor</p>
             </div>
           </article>
-          <article class="moderator-item">
+          <article class="moderator-item tilt-3d reveal">
             <div class="moderator-thumb"><img src="../IMG_4387 (1).webp" alt="Femi Maven" loading="lazy" /></div>
             <div>
               <h3>Femi Maven</h3>
               <p>Instructor</p>
             </div>
           </article>
-          <article class="moderator-item">
+          <article class="moderator-item tilt-3d reveal">
             <div class="moderator-thumb"><img src="../assets/Faye Smiles.jpeg" alt="Faye Smiles" loading="lazy" /></div>
             <div>
               <h3>Faye Smiles</h3>
@@ -2623,7 +2659,7 @@
         </div>
       </div>
     </section>
-    <section class="convener">
+    <section class="convener reveal">
       <div class="wrap convener-grid">
         <div class="convener-photo"><img src="../IMG_4387 (1).webp" alt="Femi Maven" loading="lazy" /></div>
         <div>
@@ -2662,7 +2698,7 @@
           loading="lazy" />
       </div>
     </section>
-    <section id="faq" class="faq">
+    <section id="faq" class="faq reveal">
       <div class="wrap" style="max-width:860px">
         <div class="section-head">
           <div>
@@ -2738,7 +2774,7 @@
         </div>
       </div>
     </section>
-    <section class="final">
+    <section class="final reveal">
       <div class="final-inner wrap">
         <span class="eyebrow alt"><svg class="icon" style="width:14px;height:14px;stroke:var(--plum-dark)">
             <use href="#i-heart"></use>
@@ -3043,6 +3079,85 @@
           fireConfetti();
         });
       });
+    })();
+
+    (function initPageReveals() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+        return;
+      }
+
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in');
+          obs.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      reveals.forEach(el => observer.observe(el));
+    })();
+
+    (function init3DTilt() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (window.innerWidth < 768) return;
+
+      const tiltElements = document.querySelectorAll('.tilt-3d');
+      tiltElements.forEach(card => {
+        card.addEventListener('mousemove', function (e) {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -8;
+          const rotateY = ((x - centerX) / centerX) * 8;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', function () {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale3d(1, 1, 1)';
+        });
+      });
+    })();
+
+    (function init3DParallax() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (window.innerWidth < 900) return;
+
+      const shapes = document.querySelectorAll('.brand-shape[data-depth]');
+      if (!shapes.length) return;
+
+      let mouseX = 0;
+      let mouseY = 0;
+      let targetX = 0;
+      let targetY = 0;
+
+      window.addEventListener('mousemove', function (e) {
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+      }, { passive: true });
+
+      function animateParallax() {
+        targetX += (mouseX - targetX) * 0.08;
+        targetY += (mouseY - targetY) * 0.08;
+
+        shapes.forEach(shape => {
+          const depth = parseFloat(shape.getAttribute('data-depth')) || 10;
+          const moveX = targetX * depth;
+          const moveY = targetY * depth;
+          const rot = shape.style.getPropertyValue('--rot') || '0deg';
+          shape.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, 0px) rotate(${rot})`;
+        });
+
+        requestAnimationFrame(animateParallax);
+      }
+
+      requestAnimationFrame(animateParallax);
     })();
 
     (function () {
