@@ -1834,6 +1834,130 @@
       transform: scale(1.1);
     }
 
+    .waitlist-dialog {
+      position: fixed;
+      inset: 0;
+      margin: auto;
+      width: min(460px, calc(100vw - 32px));
+      max-width: none;
+      max-height: calc(100vh - 32px);
+      padding: 0;
+      overflow: auto;
+      border: 1px solid rgba(43, 30, 41, 0.1);
+      border-radius: 22px;
+      color: var(--charcoal);
+      background: #fff;
+      box-shadow: 0 30px 90px rgba(20, 12, 19, 0.38);
+    }
+
+    .waitlist-dialog[open] {
+      animation: waitlist-dialog-in 0.24s cubic-bezier(0.2, 0, 0.2, 1) both;
+    }
+
+    .waitlist-dialog::backdrop {
+      background: rgba(20, 12, 19, 0.72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    @keyframes waitlist-dialog-in {
+      from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .waitlist-dialog-content {
+      position: relative;
+      padding: 36px;
+      border-top: 6px solid var(--plum);
+    }
+
+    .waitlist-dialog-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(43, 30, 41, 0.12);
+      border-radius: 50%;
+      color: var(--charcoal);
+      background: #fff;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .waitlist-dialog-close:hover {
+      background: var(--blush-soft);
+      transform: rotate(90deg);
+    }
+
+    .waitlist-dialog-close .icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .waitlist-dialog-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--plum-dark);
+      background: var(--blush-soft);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .waitlist-dialog-status .icon {
+      width: 15px;
+      height: 15px;
+    }
+
+    .waitlist-dialog h2 {
+      max-width: 340px;
+      margin-bottom: 12px;
+      font-size: 30px;
+      line-height: 1.12;
+    }
+
+    .waitlist-dialog p {
+      margin-bottom: 24px;
+      color: #65545e;
+      line-height: 1.6;
+    }
+
+    .waitlist-dialog-action {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @media (max-width: 480px) {
+      .waitlist-dialog-content {
+        padding: 32px 24px 24px;
+      }
+
+      .waitlist-dialog h2 {
+        padding-right: 12px;
+        font-size: 26px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .waitlist-dialog[open] {
+        animation: none;
+      }
+    }
+
     /* ---------- Rewards Section ---------- */
     .rewards-section {
       background: var(--grad-deep-plum);
@@ -3378,6 +3502,22 @@
       </div>
     </div>
 
+    <dialog class="waitlist-dialog" id="waitlistClosedDialog" aria-labelledby="waitlistDialogTitle"
+      aria-describedby="waitlistDialogMessage">
+      <div class="waitlist-dialog-content">
+        <button class="waitlist-dialog-close" type="button" data-close-waitlist aria-label="Close dialog">
+          <svg class="icon" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+        <span class="waitlist-dialog-status">
+          <svg class="icon" aria-hidden="true"><use href="#i-calendar" /></svg>
+          Registration closed
+        </span>
+        <h2 id="waitlistDialogTitle">The waitlist is closed.</h2>
+        <p id="waitlistDialogMessage">Registration for the 2026 summit has ended. Thanks for your interest. Follow us for updates on future programs.</p>
+        <button class="btn btn-primary waitlist-dialog-action" type="button" data-close-waitlist>Got it</button>
+      </div>
+    </dialog>
+
     <!-- ================= WHY ATTEND ================= -->
     <section class="section tight">
       <div class="container">
@@ -3772,8 +3912,36 @@
       document.body.style.overflow = '';
     }
 
+    // The waitlist is closed; keep every CTA from opening the old form.
+    const waitlistClosedDialog = document.getElementById('waitlistClosedDialog');
+
+    document.addEventListener('click', function (event) {
+      const waitlistLink = event.target.closest('a[href="https://forms.gle/NuG6SeNmRKqzdJuB9"]');
+      if (!waitlistLink) return;
+
+      event.preventDefault();
+      if (waitlistClosedDialog && !waitlistClosedDialog.open) {
+        waitlistClosedDialog.showModal();
+      }
+    });
+
+    if (waitlistClosedDialog) {
+      waitlistClosedDialog.querySelectorAll('[data-close-waitlist]').forEach(button => {
+        button.addEventListener('click', () => waitlistClosedDialog.close());
+      });
+
+      waitlistClosedDialog.addEventListener('click', function (event) {
+        if (event.target === waitlistClosedDialog) {
+          waitlistClosedDialog.close();
+        }
+      });
+    }
+
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
+        if (waitlistClosedDialog && waitlistClosedDialog.open) {
+          waitlistClosedDialog.close();
+        }
         closeLightboxDirect();
       }
     });
@@ -3897,7 +4065,6 @@
       const secsEl = document.getElementById('cd-secs');
       const statusEl = document.getElementById('cd-status');
       const cardEl = document.getElementById('waitlistCountdown');
-
       if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
 
       const targetDate = new Date(new Date().getFullYear(), 8, 25, 23, 59, 59).getTime();
