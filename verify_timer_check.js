@@ -1,18 +1,16 @@
-function getTargetDate(dateStr) {
-    const now = new Date(dateStr);
-    return new Date(now.getFullYear(), 8, 25, 23, 59, 59).getTime();
+const targetDate = Date.parse('2026-10-07T14:56:30Z');
+
+function isClosed(dateStr) {
+    return new Date(dateStr).getTime() >= targetDate;
 }
 
-function isLiveSoon(dateStr) {
-    const now = new Date(dateStr).getTime();
-    const targetDate = getTargetDate(dateStr);
-    return Math.max(0, targetDate - now) === 0;
-}
-
-console.log('expired-on-sept-26:', isLiveSoon('2026-09-26T00:00:00Z'));
-console.log('not-expired-before-sept-25:', isLiveSoon('2026-09-24T00:00:00Z'));
+console.assert(targetDate - Date.parse('2026-10-02T14:56:30Z') === 5 * 24 * 60 * 60 * 1000, 'window should be exactly five days');
+console.assert(!isClosed('2026-10-07T14:56:29Z'), 'waitlist should remain open one second before cutoff');
+console.assert(isClosed('2026-10-07T14:56:30Z'), 'waitlist should close at cutoff');
 
 const fs = require('fs');
 const html = fs.readFileSync('index.html', 'utf8');
-console.log('has-live-soon-text:', html.includes('Going Live Soon'));
-console.log('has-fixed-target-date:', html.includes('new Date(new Date().getFullYear(), 8, 25, 23, 59, 59).getTime()'));
+console.assert(html.includes("const WAITLIST_CLOSES_AT = Date.parse('2026-10-07T14:56:30Z');"), 'page should use the fixed cutoff');
+console.assert(html.includes('if (Date.now() < WAITLIST_CLOSES_AT) return;'), 'signup links should work before cutoff');
+console.assert(html.includes('const targetDate = WAITLIST_CLOSES_AT;'), 'countdown should use the same cutoff');
+console.log('Waitlist window checks passed.');
