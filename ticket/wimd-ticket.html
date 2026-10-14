@@ -1338,62 +1338,61 @@
       overflow: hidden;
       aspect-ratio: 1;
       border-radius: 40% 40% 8% 8%;
-      background: var(--blush)
+      background: var(--blush);
+      box-shadow: 0 16px 32px -12px rgba(43, 30, 41, 0.18);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
-    .speaker-photo::after {
-      content: "Revealing soon";
-      position: absolute;
-      left: 16px;
-      bottom: 16px;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.66);
-      border: 1px solid rgba(139, 63, 130, 0.12);
-      color: var(--plum-dark);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 8px 20px rgba(43, 30, 41, 0.08);
+    .speaker:hover .speaker-photo {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 40px -14px rgba(139, 63, 130, 0.28);
     }
 
     .speaker-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: blur(8px) saturate(0.7);
-      transform: scale(1.04);
-      opacity: 0.8;
+      display: block;
+      transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .speaker:hover .speaker-photo img {
+      transform: scale(1.06);
     }
 
     .speaker-number {
       position: absolute;
       top: 14px;
       left: 16px;
-      font-size: 18px;
+      font-size: 13px;
       font-weight: 800;
-      color: var(--plum)
+      color: var(--plum-dark);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(139, 63, 130, 0.15);
+      border-radius: 999px;
+      padding: 4px 10px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(43, 30, 41, 0.1);
+      z-index: 2;
+      line-height: 1;
     }
 
     .speaker h3 {
       margin: 15px 0 0;
       font-size: 20px;
       letter-spacing: -.03em;
-      color: var(--charcoal)
+      color: var(--charcoal);
+      font-weight: 800;
     }
 
     .speaker p {
-      max-width: 22ch;
+      max-width: 26ch;
       margin: 5px 0 0;
-      font-size: 11px;
-      color: #5A4A54
+      font-size: 12px;
+      line-height: 1.4;
+      color: #5A4A54;
+      font-weight: 500;
     }
 
     .moderator-section {
@@ -2599,52 +2598,68 @@
         </div>
         <div class="speakers-grid">
           <article class="speaker tilt-3d reveal">
-            <div class="speaker-photo"><img src="/wimd/speaker-glory.jpg" alt="Revealing soon" loading="lazy" /><span
-                class="speaker-number">01</span></div>
-            <h3>Revealing soon</h3>
-            <p>Revealing soon</p>
+            <div class="speaker-photo">
+              <img src="./Glory Mpamah.jpg" alt="Glory Mpamah" loading="lazy" />
+              <span class="speaker-number">01</span>
+            </div>
+            <h3>Glory Mpamah</h3>
+            <p>Lead Motion Designer, Moniepoint</p>
           </article>
           <article class="speaker tilt-3d reveal">
-            <div class="speaker-photo"><img src="/wimd/speaker-rebecca.jpg" alt="Revealing soon" loading="lazy" /><span
-                class="speaker-number">02</span></div>
-            <h3>Revealing soon</h3>
-            <p>Revealing soon</p>
+            <div class="speaker-photo">
+              <img src="./Rebecca Thompson.jpg" alt="Rebecca Thompson" loading="lazy" />
+              <span class="speaker-number">02</span>
+            </div>
+            <h3>Rebecca Thompson</h3>
+            <p>Senior Motion Designer, Shipper.now</p>
           </article>
           <article class="speaker tilt-3d reveal">
-            <div class="speaker-photo"><img src="/wimd/speaker-esther.jpg" alt="Revealing soon" loading="lazy" /><span
-                class="speaker-number">03</span></div>
-            <h3>Revealing soon</h3>
-            <p>Revealing soon</p>
+            <div class="speaker-photo">
+              <img src="./Esther Chidinma.png" alt="Esther Chidinma" loading="lazy" />
+              <span class="speaker-number">03</span>
+            </div>
+            <h3>Esther Chidinma</h3>
+            <p>Senior Motion Designer, Freshjuice</p>
           </article>
           <article class="speaker tilt-3d reveal">
-            <div class="speaker-photo"><img src="/wimd/speaker-dami.jpg" alt="Revealing soon" loading="lazy" /><span
-                class="speaker-number">04</span></div>
-            <h3>Revealing soon</h3>
-            <p>Revealing soon</p>
+            <div class="speaker-photo">
+              <img src="./Dami Olaleye.PNG" alt="Dami Olaleye" loading="lazy" />
+              <span class="speaker-number">04</span>
+            </div>
+            <h3>Dami Olaleye</h3>
+            <p>Senior Motion Designer, Petra Christian Centre</p>
           </article>
           <article class="speaker tilt-3d reveal">
-            <div class="speaker-photo"><img src="/wimd/speaker-omobolanle.jpg" alt="Revealing soon"
-                loading="lazy" /><span class="speaker-number">05</span></div>
-            <h3>Revealing soon</h3>
-            <p>Revealing soon</p>
+            <div class="speaker-photo">
+              <img src="./Precious Eniayekan.jpg" alt="Precious Eniayekan" loading="lazy" />
+              <span class="speaker-number">05</span>
+            </div>
+            <h3>Precious Eniayekan</h3>
+            <p>Head of Marketing, SLOT Systems</p>
           </article>
           <article class="speaker tilt-3d reveal">
-            <div class="speaker-photo"><img src="/wimd/speaker-boluwatife.jpg" alt="Revealing soon"
-                loading="lazy" /><span class="speaker-number">06</span></div>
-            <h3>Revealing soon</h3>
-            <p>Revealing soon</p>
+            <div class="speaker-photo">
+              <img src="./Boluwatife Awakan.jpg" alt="Boluwatife Awakan" loading="lazy" />
+              <span class="speaker-number">06</span>
+            </div>
+            <h3>Boluwatife Awakan</h3>
+            <p>Brand Designer &amp; Co-Founder, Lilac Africa</p>
           </article>
           <article class="speaker tilt-3d reveal">
-            <div class="speaker-photo"><img src="/wimd/speaker-stephanie.jpg" alt="Revealing soon"
-                loading="lazy" /><span class="speaker-number">07</span></div>
-            <h3>Revealing soon</h3>
-            <p>Revealing soon</p>
+            <div class="speaker-photo">
+              <img src="./Stephanie Inidara.jpg" alt="Stephanie Inidara" loading="lazy" />
+              <span class="speaker-number">07</span>
+            </div>
+            <h3>Stephanie Inidara</h3>
+            <p>Graphic Designer &amp; Packaging Design Expert</p>
           </article>
           <article class="speaker tilt-3d reveal">
-            <div class="speaker-photo"><img src="/wimd/speaker-tina.jpg" alt="Revealing soon" loading="lazy" /><span
-                class="speaker-number">08</span></div>
-            <h3>Revealing soon</h3>
-            <p>Revealing soon</p>
+            <div class="speaker-photo">
+              <img src="./Tina Brown.jpg" alt="Tina Brown" loading="lazy" />
+              <span class="speaker-number">08</span>
+            </div>
+            <h3>Tina Brown</h3>
+            <p>Senior Brand Designer</p>
           </article>
         </div>
       </div>
